@@ -7,3 +7,52 @@
 body {
   background-color: #f7fafd;
 }
+
+/* CSS CODE FOR Navbar2.jsx */
+/* #navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  max-height: 100vh;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: left;
+}
+
+#navbar-logo {
+  writing-mode: horizontal-tb;
+}
+
+#navbar-items {
+  writing-mode: vertical-lr;
+} */
+/* END OF CSS CODE FOR Navbar2.jsx */
+
+/* Define initial styles for navbar */
+.navbar-default {
+  position: absolute;
+  inset: 0;
+}
+
+/* Define styles when navbar scrolls */
+.navbar-scroll {
+  position: fixed;
+  top: -100px; /* Adjust this value as needed */
+  animation: slideDown 0.5s ease forwards; /* Animation for smooth transition */
+}
+
+/* Keyframes for slideDown animation */
+@keyframes slideDown {
+  from {
+    top: -100px; /* Adjust this value to the initial position off the screen */
+  }
+  to {
+    top: 0; /* Adjust this value to where you want the navbar to stick */
+  }
+}
+
+.hero-container {
+  margin-top: 117px;
+  height: calc(100vh - 117px);
+}

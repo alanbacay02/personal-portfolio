@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CatCode from '../assets/cat_code_logo.png'
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithubAlt } from "react-icons/fa6";
@@ -38,6 +38,25 @@ const NAVBAR_ICONS = [
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const [scrolling, setScrolling] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolling(true)
+      } else {
+        setScrolling(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+
 
   const handleMobileMenuClick = () => {
     return (
@@ -46,7 +65,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='absolute inset-0 w-full h-fit py-4 px-6 text-text-950 z-50'>
+    <div className={`w-full h-fit px-6 text-text z-50 ${scrolling ? 'navbar-scroll bg-background py-0' : 'navbar-default py-4'}`}>
       <div className='w-full max-w-[1200px] mx-auto'>
         <div className='relative flex flex-row items-center justify-between'>
           <div id='navbar-logo' className='mx-3 my-5 w-10 h-auto hover:cursor-pointer z-50'>
