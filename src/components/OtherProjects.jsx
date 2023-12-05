@@ -1,4 +1,5 @@
 import React from 'react'
+import OtherProjectsCarousel from './OtherProjectsCarousel'
 
 const OtherProjects = () => {
   return (
@@ -8,6 +9,8 @@ const OtherProjects = () => {
           <h2 className='font-bold min-w-fit text-4xl text-text mb-1'>Other Projects</h2>
           <p className='text-lg'>Pure HTML/CSS Pages, Small React Apps, & More</p>
         </div>
+
+        <OtherProjectsCarousel />
       </div>
     </div>
   )
