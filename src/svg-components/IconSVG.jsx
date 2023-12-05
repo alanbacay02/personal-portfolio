@@ -2,7 +2,7 @@ import React from 'react'
 
 export const HtmlSvgIcon = () => {
   return (
-    <svg fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <svg fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
       <path d="M6 28L4 3h24l-2 25-10 3-10-3z" fill="#E44D26" />
       <path d="M26 5H16v24.5l8-2.5 2-22z" fill="#F16529" />
       <path
@@ -15,7 +15,7 @@ export const HtmlSvgIcon = () => {
 
 export const CssSvgIcon = () => {
   return (
-    <svg fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <svg fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
       <path d="M6 28L4 3h24l-2 25-10 3-10-3z" fill="#1172B8" />
       <path d="M26 5H16v24.5l8-2.5 2-22z" fill="#3AD" />
       <path
@@ -32,6 +32,7 @@ export const JavaScriptSvgIcon = () => {
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 256 256"
       xmlns="http://www.w3.org/2000/svg"
+      width="100%" height="100%"
     >
       <path d="M0 0h256v256H0V0z" fill="#F7DF1E" />
       <path d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.087-21.996M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257 0-18.044 13.747-31.792 35.228-31.792 15.294 0 26.292 5.328 34.196 19.247L210.29 147.43c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.819-24.574" />
@@ -41,7 +42,7 @@ export const JavaScriptSvgIcon = () => {
 
 export const TailwindSvgIcon = () => {
   return (
-    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
       <path
         d="M9 13.7q1.4-5.6 7-5.6c5.6 0 6.3 4.2 9.1 4.9q2.8.7 4.9-2.1-1.4 5.6-7 5.6c-5.6 0-6.3-4.2-9.1-4.9q-2.8-.7-4.9 2.1zm-7 8.4q1.4-5.6 7-5.6c5.6 0 6.3 4.2 9.1 4.9q2.8.7 4.9-2.1-1.4 5.6-7 5.6c-5.6 0-6.3-4.2-9.1-4.9q-2.8-.7-4.9 2.1z"
         fill="#44a8b3"
@@ -52,7 +53,7 @@ export const TailwindSvgIcon = () => {
 
 export const ReactSvgIcon = () => {
   return (
-    <svg fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <svg fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
       <path
         d="M18.679 15.976c0-1.435-1.2-2.598-2.679-2.598-1.48 0-2.679 1.163-2.679 2.598 0 1.434 1.2 2.597 2.679 2.597 1.48 0 2.679-1.163 2.679-2.597z"
         fill="#53C1DE"
