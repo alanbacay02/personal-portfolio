@@ -9,7 +9,7 @@ const PROJECT_CARDS = [
   {
     title: 'Orion Landing Page',
     description: 'A mock landing page for a Cloud Hosting company. For this website, I wanted to experiment designing sleek and minimalistic components that gives a modern feel, such as how technology is modernizing at a fast pace.',
-    technologies: 'React, Tailwindcss, Framer Motion, SlickJS',
+    technologies: 'React, Tailwindcss, Framer Motion, Embla Carousel',
     imgSrc: OrionImg,
     imgAlt: 'Orion_Website',
     pageLink: 'https://alanbacay02.github.io/rocket/',
@@ -18,7 +18,7 @@ const PROJECT_CARDS = [
   {
     title: 'Highlander Landing Page',
     description: 'A simple landing page for a travel agency website. This is my first fully fledged front-end project created in React where I learned how to make modular components and dynamically rendered content, while learning how to leverage powerful packages for React.',
-    technologies: 'React, Tailwindcss, SwiperJS',
+    technologies: 'React, Tailwindcss, SlickJS',
     imgSrc: HighLanderImg,
     imgAlt: 'Highlander_Website',
     pageLink: 'https://alanbacay02.github.io/mock-travel-website/',
