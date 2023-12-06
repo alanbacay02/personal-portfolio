@@ -8,10 +8,6 @@ body {
   background-color: #f7fafd;
 }
 
-.embla__project__slide {
-  flex: 0 0 35%;
-}
-
 /* CSS CODE FOR Navbar2.jsx */
 /* #navbar {
   position: -webkit-sticky;
