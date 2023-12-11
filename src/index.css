@@ -8,6 +8,10 @@ body {
   background-color: #f7fafd;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 /* CSS CODE FOR Navbar2.jsx */
 /* #navbar {
   position: -webkit-sticky;
