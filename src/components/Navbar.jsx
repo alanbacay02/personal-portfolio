@@ -8,19 +8,19 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const NAVBAR_ITEMS = [
   {
     title: 'About',
-    href: '/#'
+    href: ''
   },
   {
     title: 'Skills',
-    href: '/#'
+    href: ''
   },
   {
     title: 'Projects',
-    href: '/#'
+    href: ''
   },
   {
     title: 'Contact',
-    href: '/#'
+    href: ''
   },
 ]
 
@@ -56,8 +56,6 @@ const Navbar = () => {
     }
   }, [])
 
-
-
   const handleMobileMenuClick = () => {
     return (
       setMobileMenu(!mobileMenu)
@@ -65,7 +63,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className={`w-full h-fit px-6 text-text z-50 ${scrolling ? 'navbar-scroll bg-background py-0' : 'navbar-default py-4'}`}>
+    <div className={`w-full h-fit px-4 text-text z-10 ${scrolling ? 'navbar-scroll bg-background py-0' : 'navbar-default py-4'}`}>
       <div className='w-full max-w-[1200px] mx-auto'>
         <div className='relative flex flex-row items-center justify-between'>
           <div id='navbar-logo' className='mx-3 my-5 w-10 h-auto hover:cursor-pointer z-50'>
@@ -81,18 +79,10 @@ const Navbar = () => {
                   </li>
                 )
               })}
-              {/* <li className='group relative'>
-                <button className='px-4 py-2 border-2 font-[400] text-lg border-text-950 transition-all duration-300 z-50'>Contact Me</button>
-                <div className='absolute inset-0 w-full h-0 group-hover:h-full bg-primary-500 -z-10 transition-all duration-300' />
-              </li> */}
             </ul>
           </div>
-
-          <div className='sm:hidden text-3xl' onClick={handleMobileMenuClick}>
-            <RxHamburgerMenu />
-          </div>
           
-          <div className='flex items-center gap-8'>
+          <div className='flex items-center gap-6 md:gap-8'>
             <div className='hidden sm:flex flex-row gap-1 text-xl z-50'>
               {NAVBAR_ICONS.map((item, index) => {
                 return (
@@ -113,6 +103,9 @@ const Navbar = () => {
             >
               {isDarkMode ? <LuSunMoon /> : <LuMoon />}
             </button>
+            <div className='sm:hidden text-3xl' onClick={handleMobileMenuClick}>
+              <RxHamburgerMenu />
+            </div>
           </div>
         </div>
       </div>
