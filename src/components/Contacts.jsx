@@ -5,10 +5,10 @@ import EmailForm from './EmailForm'
 const Contacts = () => {
 
   return (
-    <div className='w-full py-16'>
+    <div className='w-full py-20'>
       <div className='w-full max-w-[1200px] mx-auto px-6'>
-        <div className='grid md:grid-cols-2'>
-          <div className='flex flex-col text-text'>
+        <div className='relative grid md:grid-cols-2 gap-16'>
+          <div className='flex flex-col my-3 text-text'>
             <h2 className='text-5xl font-bold mb-4'>Contact Me</h2>
             <p className='text-lg max-w-[500px] mb-6'>Feel free to reach out to me through my socials, or send an email through the form.</p>
             <div className='mb-4'>
@@ -46,10 +46,13 @@ const Contacts = () => {
           </div>
 
           {/* Start of Email Form */}
-          <div className=''>
+          <div className='my-3'>
             <EmailForm />
           </div>
           {/* End of Email Form */}
+
+          {/* Grid Column Divider */}
+          <div className='absolute h-full w-[1px] bg-gray-300 top-0 right-1/2 left-1/2' />
         </div>
       </div>
     </div>
