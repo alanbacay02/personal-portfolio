@@ -1,6 +1,7 @@
 import React from 'react'
+import PrivacyPolicyModal from './PrivacyPolicyModal'
 
-const formLabelStyle = 'font-medium px-2 mb-2 text-gray-400'
+const formLabelStyle = 'text-lg font-medium px-2 mb-2 text-gray-400'
 const inputFieldStyle = 'border border-secondary rounded-md bg-background py-1 px-2 focus:outline-secondary focus:shadow-xl'
 
 const EmailForm = () => {
@@ -48,7 +49,7 @@ const EmailForm = () => {
           />
         </div>
         {/* AGREEMENT FIELD */}
-        <div className='flex flex-row gap-2 items-center ml-2 mb-2'>
+        <div className='flex flex-row gap-2 items-center ml-2.5 mb-2'>
           <input
             id='form_agreement'
             type='checkbox'
@@ -64,11 +65,12 @@ const EmailForm = () => {
           <input
             id='submit_button'
             type='submit'
-            className='font-medium text-lg text-white rounded-lg py-1 px-5 bg-primary hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300'
+            className='font-medium text-lg text-white rounded-lg py-2 px-5 bg-primary hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300'
             value='Send Email'
           />
         </div>
       </form>
+      <PrivacyPolicyModal />
     </div>
   )
 }
