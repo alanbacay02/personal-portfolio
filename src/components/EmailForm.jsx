@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PrivacyPolicyModal from './PrivacyPolicyModal'
 
 const formLabelStyle = 'text-lg font-medium px-2 mb-2 text-gray-400'
 const inputFieldStyle = 'border border-secondary rounded-md bg-background py-1 px-2 focus:outline-secondary focus:shadow-xl'
 
 const EmailForm = () => {
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false)
+
   return (
     <div className='w-full'>
       <form className='flex flex-col justify-center'>
@@ -50,14 +52,14 @@ const EmailForm = () => {
         </div>
         {/* AGREEMENT FIELD */}
         <div className='flex flex-row gap-2 items-center ml-2.5 mb-2'>
+          <label htmlFor='form_agreement' className='sr-only'>I have read and agree to the Privacy Policy.</label>
           <input
             id='form_agreement'
             type='checkbox'
+            className='text-lg w-4 h-4'
             required
           />
-          <label
-            htmlFor='form_agreement'
-          >I have read and agree to the <a href='/#' className='text-accent underline'>Privacy Policy</a>.</label>
+          <p>I have read and agree to the <span onClick={() => {setShowPrivacyModal(!showPrivacyModal)}} className='hover:cursor-pointer hover:underline text-accent'>Privacy Policy</span>.</p>
         </div>
         {/* SUBMIT BUTTON */}
         <div className='ml-2'>
@@ -70,7 +72,7 @@ const EmailForm = () => {
           />
         </div>
       </form>
-      <PrivacyPolicyModal />
+      <PrivacyPolicyModal showPrivacyModal={showPrivacyModal} setShowPrivacyModal={setShowPrivacyModal} />
     </div>
   )
 }
