@@ -67,8 +67,10 @@ const EmailForm = () => {
           <input
             id='submit_button'
             type='submit'
-            className='font-medium text-lg text-white rounded-lg py-2 px-5 bg-primary hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300'
+            // className='font-medium text-lg text-white rounded-lg py-2 px-5 bg-primary hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300'
+            className='font-medium text-lg rounded-lg py-2 px-5 bg-blue-200 text-gray-400'
             value='Send Email'
+            disabled
           />
         </div>
       </form>
