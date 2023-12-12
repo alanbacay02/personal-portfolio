@@ -31,7 +31,7 @@ const Projects = () => {
     <div className="w-full py-16">
       <div className="w-full max-w-[1200px] mx-auto px-4">
         <div className='flex flex-col items-center justify-center w-full mb-14'>
-          <h1 className='font-bold min-w-fit text-3xl text-text mb-1'>My Projects</h1>
+          <h2 className='font-bold min-w-fit text-4xl text-text mb-1'>My Projects</h2>
           <p className='text-lg'>Featured Projects</p>
         </div>
         <div className="flex flex-col items-center justify-center w-full mx-auto">
@@ -40,10 +40,10 @@ const Projects = () => {
             <h1 className='font-bold min-w-fit text-3xl text-text'>My Projects</h1>
             <div className='h-0.5 w-full bg-secondary mt-1 mx-3'/>
           </div> */}
-          <div className="grid grid-cols-2 w-full gap-16">
+          <div className="grid md:grid-cols-2 w-full gap-16">
             {PROJECT_CARDS.map((item, index) => {
               return (
-                <div className='flex flex-col gap-6 w-fit items-center'>
+                <div className='flex flex-col gap-6 w-fit items-center max-w-[550px] mx-auto'>
                     {/* Start of Motion Div */}
                     <motion.div className="bg-gray-200 pt-7 px-7 rounded-xl overflow-clip">
                       <a href={item.pageLink} target='_blank' rel='noreferrer' className='hover:cursor-pointer'>
@@ -51,8 +51,10 @@ const Projects = () => {
                           src={item.imgSrc}
                           alt={item.imgAlt}
                           className='h-auto w-full rounded-t-lg'
-                          initial={{translateY: 6}}
-                          whileHover={{rotate: 3, scale: 1.05}}
+                          initial={{ translateY: 6 }}
+                          whileHover={{ rotate: 3, scale: 1.05 }}
+                          exit={{ rotate: 0, scale: 1 }}
+                          transition={{ duration: 0.15 }}
                         />
                       </a>
                     </motion.div>
