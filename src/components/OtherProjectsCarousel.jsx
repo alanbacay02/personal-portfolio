@@ -78,7 +78,7 @@ const PROJECT_CARD_INFO = [
   },
   {
     projectTitle: 'University Landing Page',
-    languageIcons: [<HtmlSvgIcon />, <BoostrapSvgIcon />, <CssSvgIcon />],
+    languageIcons: [<HtmlSvgIcon />, <CssSvgIcon />, <BoostrapSvgIcon />],
     projectDeployLink: 'https://alanbacay02.github.io/mainwebpage/',
     projectImg: carouselProjectImages['bootstrapUniPage.png']
   },
