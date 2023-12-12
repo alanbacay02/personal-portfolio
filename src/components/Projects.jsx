@@ -50,7 +50,7 @@ const Projects = () => {
                         <motion.img
                           src={item.imgSrc}
                           alt={item.imgAlt}
-                          className='h-auto w-full rounded-t-lg'
+                          className='h-auto w-full rounded-t-lg select-none pointer-events-none'
                           initial={{ translateY: 6 }}
                           whileHover={{ rotate: 3, scale: 1.05 }}
                           exit={{ rotate: 0, scale: 1 }}
