@@ -8,7 +8,7 @@ const OtherProjectCard = ({ title, languages, deployLink, projectImg }) => {
   let LangCompArray = Array.isArray(languages) && languages.length > 0 ? [...languages] : [<HtmlSvgIcon />]
 
   return (
-    <div className='flex flex-col max-w-[220px] md:max-w-[340px] mx-auto'>
+    <div className='flex flex-col w-[90%] max-w-[330px] mx-auto'>
       <a href={deployLink} target='_blank' rel='noreferrer' className='group hover:cursor-pointer'>
         <div className='h-full max-h-[215px] w-full overflow-clip shadow-md bg-secondary'>
           <img src={projectImg} alt={title} className='object-cover object-center group-hover:scale-105 transition-all duration-300' />
