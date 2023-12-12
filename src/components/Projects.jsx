@@ -47,15 +47,18 @@ const Projects = () => {
                     {/* Start of Motion Div */}
                     <motion.div className="bg-gray-200 pt-7 px-7 rounded-xl overflow-clip">
                       <a href={item.pageLink} target='_blank' rel='noreferrer' className='hover:cursor-pointer'>
-                        <motion.img
-                          src={item.imgSrc}
-                          alt={item.imgAlt}
-                          className='h-auto w-full rounded-t-lg select-none'
+                        <motion.div
                           initial={{ translateY: 6 }}
                           whileHover={{ rotate: 3, scale: 1.05 }}
                           exit={{ rotate: 0, scale: 1 }}
                           transition={{ duration: 0.15 }}
-                        />
+                        >
+                          <img
+                            src={item.imgSrc}
+                            alt={item.imgAlt}
+                            className='h-auto w-full rounded-t-lg pointer-events-none'
+                          />
+                        </motion.div>
                       </a>
                     </motion.div>
                     {/* End of Motion Div */}
