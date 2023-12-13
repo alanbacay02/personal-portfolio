@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
 import { BoostrapSvgIcon, CssSvgIcon, HtmlSvgIcon, JavaScriptSvgIcon, ReactSvgIcon, TailwindSvgIcon } from '../svg-components/IconSVG';
-import { motion } from 'framer-motion'
 import { register } from 'swiper/element/bundle'
 import OtherProjectCard from './OtherProjectCard';
 
@@ -127,6 +126,35 @@ const OtherProjectsCarousel = () => {
     Object.assign(swiperContainer, params)
     // initializes swiper
     swiperContainer.initialize()
+
+    // Select the card container element
+    const cardContainer = document.querySelector('.card-container')
+
+    // Set up an Intersection Observer to track changes in visibility
+    const observer = new IntersectionObserver( entries => {
+      // Iterate through each entry observer by the Intersection Observer
+      entries.forEach(entry => {
+        // Check if the observer element is intersecting the observer
+        if (entry.isIntersecting) {
+          // Add 'in-view' class to the card container when it's in view
+          cardContainer.classList.add('in-view')
+        } else {
+          // Remove 'in-view' class to the card container when it's out of view
+          cardContainer.classList.remove('in-view')
+        }
+      })
+    }, {
+      // Set the threshold for intersection to trigger at 50% visibility
+      threshold: 0.5
+    })
+    
+    // Start observing the card container element
+    observer.observe(cardContainer)
+
+    return () => {
+      // Return a cleanup function to disconnect the observer when needed
+      observer.disconnect()
+    }
   },[])
 
   // Creates a function `handlePrevClick` to handle previous button clicks
@@ -155,23 +183,17 @@ const OtherProjectsCarousel = () => {
           <p className='group-hover:scale-110 group-active:scale-90 transition-all duration-200'><BsChevronCompactLeft /></p>
         </button>
       </div>
-      <div className='w-full overflow-hidden'>
+      <div className='w-full overflow-hidden card-container'>
         <swiper-container ref={swiperRef} init='false'>
           {PROJECT_CARD_INFO.map((item, index) => {
             return (
               <swiper-slide key={index}>
-                <motion.div
-                  initial={{x:0}}
-                  whileInView={{x:2}}
-                  transition={{duration: 1}}
-                >
-                  <OtherProjectCard
-                    title={item.projectTitle}
-                    languages={item.languageIcons}
-                    deployLink={item.projectDeployLink}
-                    projectImg={item.projectImg}
-                  />
-                </motion.div>
+                <OtherProjectCard
+                  title={item.projectTitle}
+                  languages={item.languageIcons}
+                  deployLink={item.projectDeployLink}
+                  projectImg={item.projectImg}
+                />
               </swiper-slide>
             )
           })}
