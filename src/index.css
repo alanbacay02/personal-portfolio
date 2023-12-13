@@ -60,3 +60,25 @@ body {
   margin-top: 117px;
   height: calc(100vh - 117px);
 }
+
+@keyframes cardBounce {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25px);
+  }
+  75% {
+    transform: translateX(5px)
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .in-view {
+    animation: cardBounce 1.2s;
+    animation-delay: 0.8s;
+  }
+}
