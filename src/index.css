@@ -5,33 +5,12 @@
 /* Custom CSS */
 
 body {
-  background-color: #f7fafd;
+  background-color: #FFFCFA;
 }
 
 .no-scroll {
   overflow: hidden;
 }
-
-/* CSS CODE FOR Navbar2.jsx */
-/* #navbar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  max-height: 100vh;
-  width: -moz-fit-content;
-  width: fit-content;
-  float: left;
-}
-
-#navbar-logo {
-  writing-mode: horizontal-tb;
-}
-
-#navbar-items {
-  writing-mode: vertical-lr;
-} */
-/* END OF CSS CODE FOR Navbar2.jsx */
 
 /* Define initial styles for navbar */
 .navbar-default {
@@ -57,8 +36,8 @@ body {
 }
 
 .hero-container {
-  margin-top: 117px;
-  height: calc(100vh - 117px);
+  margin-top: 77px;
+  height: calc(100vh - 77px);
 }
 
 @keyframes cardBounce {
@@ -76,9 +55,19 @@ body {
   }
 }
 
+/* Media query for lg devices */
 @media screen and (max-width: 1023px) {
   .in-view {
     animation: cardBounce 1.2s;
     animation-delay: 0.8s;
+  }
+}
+
+/* Media query for SM devices */
+@media screen and (max-width: 640px) {
+  .hero-container {
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 117px;
   }
 }

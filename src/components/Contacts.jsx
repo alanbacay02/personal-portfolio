@@ -5,15 +5,15 @@ import EmailForm from './EmailForm'
 const Contacts = () => {
 
   return (
-    <div className='w-full py-20'>
-      <div className='w-full max-w-[1200px] mx-auto px-6'>
-        <div className='relative grid md:grid-cols-2 gap-16'>
+    <div className='w-full py-14 sm:py-20'>
+      <div className='w-full max-w-[1200px] mx-auto px-4'>
+        <div className='relative grid sm:grid-cols-2 gap-4 md:gap-16'>
           <div className='flex flex-col my-3 text-text'>
-            <h2 className='text-5xl font-bold mb-4'>Contact Me</h2>
-            <p className='text-lg max-w-[500px] mb-6'>Feel free to reach out to me through my socials, or send an email through the form.</p>
+            <h2 className='font-bold min-w-fit text-2xl sm:text-3xl md:text-4xl text-text mb-2'>Contact Me</h2>
+            <p className='text-base sm:text-lg max-w-[85%] mb-6'>Feel free to reach out to me through my socials, or send an email through the form.</p>
             <div className='mb-4'>
-              <h4 className='text-xl font-bold mb-2 text-gray-400'>Socials</h4>
-              <div className='flex flex-row items-center text-3xl gap-2 text-primary'>
+              <h4 className='text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-400'>Socials</h4>
+              <div className='flex flex-row items-center text-2xl md:text-3xl gap-2 text-primary'>
                 <a
                   href='https://www.linkedin.com/in/alan-neale-bacay-ii-60aa48258/'
                   target='_blank'
@@ -31,8 +31,8 @@ const Contacts = () => {
               </div>
             </div>
             <div>
-              <h4 className='text-xl font-bold mb-1 text-gray-400'>Email</h4>
-              <div className='flex flex-row items-center text-lg gap-2 font-medium text-blue-500'>
+              <h4 className='text-base sm:text-lg md:text-xl font-bold mb-1 text-gray-400'>Email</h4>
+              <div className='flex flex-row items-center text-sm sm:text-base md:text-lg gap-2 font-medium text-blue-500'>
                 <a
                   href='mailto:alanjbacay@gmail.com'
                   target='_blank'
@@ -52,7 +52,7 @@ const Contacts = () => {
           {/* End of Email Form */}
 
           {/* Grid Column Divider */}
-          <div className='absolute h-full w-[1px] bg-gray-300 top-0 right-1/2 left-1/2' />
+          <div className='hidden md:block absolute h-full w-[1px] bg-gray-300 top-0 right-1/2 left-1/2' />
         </div>
       </div>
     </div>

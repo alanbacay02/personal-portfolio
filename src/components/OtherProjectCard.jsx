@@ -16,17 +16,17 @@ const OtherProjectCard = ({ title, languages, deployLink, projectImg }) => {
       </a>
       <div className='flex flex-col w-full px-1 pt-2'>
         <div className='flex flex-row items-center justify-between'>
-          <h3 className='text-lg font-medium'>{title}</h3>
+          <h3 className='text-base xs:text-lg sm:text-xl md:text-2xl  font-medium'>{title}</h3>
           <div className='flex flex-row justify-evenly items-center gap-1'>
               {/* Maps over `LangCompArray` to return Svg Icon Components */}
               {LangCompArray.map((item, index) => {
                 return (
-                  <i key={index} className='h-[32px]'>{item}</i>
+                  <i key={index} className='h-[26px] sm:h-[29px] md:h-[32px]'>{item}</i>
                 )
               })}
           </div>
         </div>
-        <a href={deployLink} target='_blank' rel='noreferrer' className='w-fit font-medium text-blue-500 hover:underline'>View Deployment &gt;</a>
+        <a href={deployLink} target='_blank' rel='noreferrer' className='w-fit text-sm xs:text-base sm:text-lg font-medium text-blue-500 hover:underline'>View Deployment &gt;</a>
       </div>
     </div>
   )

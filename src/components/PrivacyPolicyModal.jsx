@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 const privacySectionStyle = 'mb-7'
-const privacyHeaderStyle = 'text-xl font-medium mb-2'
+const privacyHeaderStyle = 'text-xl font-medium mb-3'
 const privacyParagraphStyle = 'ml-1 max-w-[95%]'
 
 const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
@@ -59,9 +59,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
             </section>
             <section className={privacySectionStyle}>
               <h3 className={privacyHeaderStyle}>Contact Information</h3>
-              <p className={privacyParagraphStyle}>If you have any questions or concerns regarding this Privacy Policy, please contact us at <a href='mailto:alanjbacay@gmail.com' className='text-accent hover:underline'>alanjbacay@gmail.com</a>.
-
-</p>
+              <p className={privacyParagraphStyle}>If you have any questions or concerns regarding this Privacy Policy, please contact us at <a href='mailto:alanjbacay@gmail.com' className='text-accent hover:underline'>alanjbacay@gmail.com</a>.</p>
             </section>
           </div>
           <div id='privacy-buttons-container' className='flex flex-row justify-end pt-5 pr-5 border-t border-gray-300'>

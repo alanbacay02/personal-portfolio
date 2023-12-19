@@ -63,13 +63,13 @@ const Navbar = () => {
   }
 
   return (
-    <div className={`w-full h-fit px-4 text-text z-10 ${scrolling ? 'navbar-scroll bg-background py-0' : 'navbar-default py-4'}`}>
+    <div className={`w-full h-fit px-4 text-text z-10 ${scrolling ? 'navbar-scroll bg-background py-4' : 'navbar-default py-4'}`}>
       <div className='w-full max-w-[1200px] mx-auto'>
         <div className='relative flex flex-row items-center justify-between'>
-          <div id='navbar-logo' className='mx-3 my-5 w-10 h-auto hover:cursor-pointer z-50'>
+          <div id='navbar-logo' className=' w-6 md:w-10 h-auto hover:cursor-pointer z-50'>
             <img src={CatCode} alt='cat_code_logo' />
           </div>
-          <div className='hidden sm:flex absolute w-full h-full items-center justify-center'>
+          <div className='hidden md:flex absolute w-full h-full items-center justify-center'>
             <ul className='flex flex-row items-center gap-10 z-50'>
               {NAVBAR_ITEMS.map((item, index) => {
                 return (
@@ -82,8 +82,8 @@ const Navbar = () => {
             </ul>
           </div>
           
-          <div className='flex items-center gap-6 md:gap-8'>
-            <div className='hidden sm:flex flex-row gap-1 text-xl z-50'>
+          <div className='flex items-center gap-4 sm:gap-6 md:gap-8'>
+            <div className='hidden xs:flex flex-row gap-1 text-xl z-50'>
               {NAVBAR_ICONS.map((item, index) => {
                 return (
                   <a
@@ -99,11 +99,11 @@ const Navbar = () => {
             </div>
             <button
               onClick={() => {setIsDarkMode(!isDarkMode)}}
-              className='text-2xl hover:cursor-pointer z-50 hover:text-primary transition-all duration-300'
+              className='text-xl md:text-2xl hover:cursor-pointer z-50 hover:text-primary transition-all duration-300'
             >
               {isDarkMode ? <LuSunMoon /> : <LuMoon />}
             </button>
-            <div className='sm:hidden text-3xl' onClick={handleMobileMenuClick}>
+            <div className='md:hidden text-2xl md:text-3xl' onClick={handleMobileMenuClick}>
               <RxHamburgerMenu />
             </div>
           </div>
