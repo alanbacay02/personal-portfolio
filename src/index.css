@@ -8,6 +8,10 @@ body {
   background-color: #FFFCFA;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .header {
   font-weight: bold;
   text-align: center;
@@ -29,8 +33,11 @@ body {
   line-height: 1.25rem;
 }
 
-.no-scroll {
-  overflow: hidden;
+.button-style {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: .875rem;
+  line-height: 1.25rem;
 }
 
 /* Define initial styles for navbar */
@@ -97,6 +104,9 @@ body {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+  .button-style {
+    padding: 0.5rem 1rem;
+  }
 }
 
 /* Media query for md devices */
@@ -112,6 +122,9 @@ body {
   .hero-container {
     margin-top: 77px;
     height: calc(100vh - 77px);
+  }
+  .button-style {
+    padding: 0.5rem 1.375rem;
   }
 }
 

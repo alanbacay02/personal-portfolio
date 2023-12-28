@@ -68,7 +68,7 @@ const EmailForm = () => {
             id='submit_button'
             type='submit'
             // className='font-medium text-lg text-white rounded-lg py-2 px-5 bg-primary hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300'
-            className='font-medium text-sm rounded-lg px-3 sm:px-4 md:px-6 py-2 bg-blue-200 text-gray-400'
+            className='font-medium text-sm button-style bg-blue-200 text-gray-400'
             value='Send Email'
             disabled
           />

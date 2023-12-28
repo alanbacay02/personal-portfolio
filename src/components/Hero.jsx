@@ -41,9 +41,9 @@ const Hero = () => {
               {/* END OF SHORT INTRO */}
 
               {/* START OF BUTTON GROUP */}
-              <div className='flex flex-row gap-2 md:gap-4 mt-4 text-xs md:text-sm font-medium'>
-                <button className='px-3 sm:px-4 md:px-5 py-2 bg-secondary text-text rounded-lg'>View Resume</button>
-                <button className='px-3 sm:px-4  md:px-5 py-2 bg-primary rounded-lg text-white'>Contact Me</button>
+              <div className='flex flex-row gap-2 md:gap-4 mt-4 font-medium'>
+                <button className='button-style bg-secondary text-text rounded-lg'>View Resume</button>
+                <button className='button-style bg-primary rounded-lg text-white'>Contact Me</button>
               </div>
               {/* END OF BUTTON GROUP */}
 
