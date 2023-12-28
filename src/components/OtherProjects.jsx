@@ -3,7 +3,7 @@ import OtherProjectsCarousel from './OtherProjectsCarousel'
 
 const OtherProjects = () => {
   return (
-    <div className='w-full py-14 sm:py-20'>
+    <div className='w-full py-14'>
       <div className='w-full max-w-[1200px] mx-auto px-4'>
         <div className='flex flex-col items-center justify-center w-full mb-14'>
           <h2 className='header'>Other Projects</h2>

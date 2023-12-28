@@ -13,7 +13,7 @@ const introDivLineMargin = 'w-[2px] sm:w-[2.5px] ml-[5px] sm:ml-[6px] bg-seconda
 
 const Hero = () => {
   return (
-    <div className='hero-container w-full pb-14 md:py-0'>
+    <div className='hero-container w-full'>
       <div className='w-full h-full max-w-[1200px] mx-auto px-4'>
         <div className='grid sm:grid-cols-2 h-full items-center gap-14 sm:gap-0'>
           <div className='flex flex-col h-full w-full justify-center items-start'>
