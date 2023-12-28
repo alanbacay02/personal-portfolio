@@ -28,9 +28,9 @@ const PROJECT_CARDS = [
 
 const Projects = () => {
   return (
-    <div className="w-full py-14">
+    <div className="w-full py-11 sm:py-14">
       <div className="w-full max-w-[1200px] mx-auto px-4">
-        <div className='flex flex-col items-center justify-center w-full mb-14'>
+        <div className='flex flex-col items-center justify-center w-full mb-10'>
           <h2 className='font-bold min-w-fit text-lg sm:text-xl md:text-2xl text-text mb-1'>My Projects</h2>
           <p className='md:text-lg'>Featured Projects</p>
         </div>
