@@ -64,12 +64,12 @@ const Navbar = () => {
   }
 
   return (
-    <div className={`w-full h-fit px-4 text-text z-10 ${scrolling ? 'navbar-scroll bg-background py-4' : 'navbar-default py-4'}`}>
-      <div className='w-full max-w-[1200px] mx-auto'>
+    <div className={`w-full h-fit text-text z-10 ${scrolling ? 'navbar-scroll bg-background py-4' : 'navbar-default py-4'}`}>
+      <div className='w-full max-w-[1200px] mx-auto px-4'>
         {/* Parent Flex Container */}
         <div className='relative flex flex-row items-center justify-between'>
           {/* Navbar Logo */}
-          <div id='navbar-logo' className=' w-6 md:w-10 h-auto hover:cursor-pointer z-50'>
+          <div id='navbar-logo' className=' w-6 md:w-7 h-auto hover:cursor-pointer z-50'>
             <img src={CatCode} alt='cat_code_logo' />
           </div>
 
@@ -78,7 +78,7 @@ const Navbar = () => {
             <ul className='flex flex-row items-center gap-10 z-50'>
               {NAVBAR_ITEMS.map((item, index) => {
                 return (
-                  <li id={index} className='group relative font-semibold text-lg hover:text-xl transition-all duration-300 text-text'>
+                  <li id={index} className='group relative font-semibold text-sm hover:text-base transition-all duration-300 text-text'>
                     <a href={item.href} className='py-2'>{item.title}</a>
                     <div className='absolute -bottom-1 left-0 h-1 w-0 -z-50 group-hover:w-full bg-primary transition-all duration-300' />
                   </li>
@@ -90,7 +90,7 @@ const Navbar = () => {
           {/* Social Media Icons, Hamburger Menu and Dark Mode Button Container */}
           <div className='flex items-center gap-4 sm:gap-6 md:gap-8'>
             {/* Social Media Icon Links */}
-            <div className='hidden xs:flex flex-row gap-1 text-xl z-50'>
+            <div className='hidden xs:flex flex-row gap-1 text-base z-50'>
               {NAVBAR_ICONS.map((item, index) => {
                 return (
                   <a
@@ -107,7 +107,7 @@ const Navbar = () => {
             {/* Dark Mode Button */}
             <button
               onClick={() => {setIsDarkMode(!isDarkMode)}}
-              className='text-xl md:text-2xl hover:cursor-pointer z-50 hover:text-primary transition-all duration-300'
+              className='text-xl md:text-xl hover:cursor-pointer z-50 hover:text-primary transition-all duration-300'
             >
               {isDarkMode ? <LuSunMoon /> : <LuMoon />}
             </button>

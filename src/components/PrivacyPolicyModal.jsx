@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 
 const privacySectionStyle = 'mb-7'
-const privacyHeaderStyle = 'text-xl font-medium mb-3'
-const privacyParagraphStyle = 'ml-1 max-w-[95%]'
+const privacyHeaderStyle = 'text-base sm:text-lg font-medium mb-3'
+const privacyParagraphStyle = 'text-sm sm:text-base ml-1 max-w-[95%]'
 
 const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
   useEffect(() => {
@@ -22,7 +22,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
     <div className={showPrivacyModal ? 'block' : 'hidden'}>
       <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center z-30'>
         <div className='flex flex-col px-8 pb-8 min-w-[60%] max-w-[1200px] max-h-[600px] rounded-lg  bg-background'>
-          <h1 className='text-2xl font-medium py-5'>Privacy Policy</h1>
+          <h1 className='text-lg sm:text-xl font-medium py-5'>Privacy Policy</h1>
           <div id='privacy-section-container' className='flex flex-col overflow-y-scroll p-2 border-t border-gray-300'>
             <section className={privacySectionStyle}>
               <p className={privacyParagraphStyle}>This Privacy Policy outlines how we collect, use, and protect your information when you interact with Alan Bacay's portfolio website. We are committed to safeguarding your privacy and ensuring the security of any personal information you provide while using this website.</p>
@@ -64,7 +64,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
           </div>
           <div id='privacy-buttons-container' className='flex flex-row justify-end pt-5 pr-5 border-t border-gray-300'>
             <button
-              className='py-2 px-5 bg-primary text-white text-lg font-medium rounded-lg hover:bg-blue-600'
+              className='py-2 px-5 bg-primary text-white text-sm sm:text-base font-medium rounded-lg hover:bg-blue-600'
               onClick={() => {setShowPrivacyModal(!showPrivacyModal)}}
             >Close</button>
           </div>

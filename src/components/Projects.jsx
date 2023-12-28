@@ -31,15 +31,10 @@ const Projects = () => {
     <div className="w-full py-14">
       <div className="w-full max-w-[1200px] mx-auto px-4">
         <div className='flex flex-col items-center justify-center w-full mb-14'>
-          <h2 className='font-bold min-w-fit text-2xl sm:text-3xl md:text-4xl text-text mb-1'>My Projects</h2>
-          <p className='text-base sm:text-lg'>Featured Projects</p>
+          <h2 className='font-bold min-w-fit text-lg sm:text-xl md:text-2xl text-text mb-1'>My Projects</h2>
+          <p className='md:text-lg'>Featured Projects</p>
         </div>
         <div className="flex flex-col items-center justify-center w-full mx-auto">
-          {/* <div className='flex flex-row items-center w-full mb-11'>
-            <div className='h-0.5 w-[10%] bg-secondary mt-1 mx-3'/>
-            <h1 className='font-bold min-w-fit text-3xl text-text'>My Projects</h1>
-            <div className='h-0.5 w-full bg-secondary mt-1 mx-3'/>
-          </div> */}
           <div className="grid md:grid-cols-2 w-full gap-16">
             {PROJECT_CARDS.map((item, index) => {
               return (
@@ -62,15 +57,15 @@ const Projects = () => {
                     {/* End of Motion Div */}
                   <div className="flex flex-col px-2 w-auto">
                     <div className="flex flex-row items-center mb-3">
-                      <h2 className='w-full xs:min-w-fit text-base xs:text-lg sm:text-xl md:text-2xl font-medium text-text'>{item.title}</h2>
+                      <h2 className='w-full xs:min-w-fit text-base sm:text-xl font-medium text-text'>{item.title}</h2>
                       <div className='h-0.5 w-[30%] xs:w-full bg-secondary mt-1 mx-3' />
-                      <div className="text-2xl md:text-3xl flex flex-row gap-2 mt-1 text-gray-400">
+                      <div className="text-xl sm:text-2xl flex flex-row gap-2 mt-1 text-gray-400">
                         <a href={item.githubLink} target='_blank' rel='noreferrer' className='hover:cursor-pointer hover:text-primary hover:scale-110 transition-all duration-300'><FaGithubSquare /></a>
                         <a href={item.pageLink} target='_blank' rel='noreferrer' className='hover:cursor-pointer hover:text-primary hover:scale-110 transition-all duration-300'><IoLinkOutline /></a>
                       </div>
                     </div>
-                    <p className='text-base sm:text-lg md:text-xl font-medium mb-3 text-sky-600'>{item.technologies}</p>
-                    <p className='text-sm xs:text-base sm:text-lg text-secondary-800'>{item.description}</p>
+                    <p className='text-sm sm:text-base font-medium mb-3 text-sky-600'>{item.technologies}</p>
+                    <p className='paragraph'>{item.description}</p>
                   </div>
                 </div>
               )

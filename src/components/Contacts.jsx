@@ -9,11 +9,11 @@ const Contacts = () => {
       <div className='w-full max-w-[1200px] mx-auto px-4'>
         <div className='relative grid sm:grid-cols-2 gap-4 md:gap-16'>
           <div className='flex flex-col my-3 text-text'>
-            <h2 className='font-bold min-w-fit text-2xl sm:text-3xl md:text-4xl text-text mb-2'>Contact Me</h2>
-            <p className='text-base sm:text-lg max-w-[85%] mb-6'>Feel free to reach out to me through my socials, or send an email through the form.</p>
+            <h2 className='header'>Contact Me</h2>
+            <p className='paragraph max-w-[85%] mb-6'>Feel free to reach out to me through my socials, or send an email through the form.</p>
             <div className='mb-4'>
-              <h4 className='text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-400'>Socials</h4>
-              <div className='flex flex-row items-center text-2xl md:text-3xl gap-2 text-primary'>
+              <h4 className='text-base sm:text-lg font-bold mb-2 text-gray-400'>Socials</h4>
+              <div className='flex flex-row items-center text-2xl md:text-3xl gap-1 text-primary'>
                 <a
                   href='https://www.linkedin.com/in/alan-neale-bacay-ii-60aa48258/'
                   target='_blank'
@@ -31,8 +31,8 @@ const Contacts = () => {
               </div>
             </div>
             <div>
-              <h4 className='text-base sm:text-lg md:text-xl font-bold mb-1 text-gray-400'>Email</h4>
-              <div className='flex flex-row items-center text-sm sm:text-base md:text-lg gap-2 font-medium text-blue-500'>
+              <h4 className='text-base sm:text-lg font-bold mb-1 text-gray-400'>Email</h4>
+              <div className='flex flex-row items-center text-sm sm:text-base gap-2 font-medium text-blue-500'>
                 <a
                   href='mailto:alanjbacay@gmail.com'
                   target='_blank'
