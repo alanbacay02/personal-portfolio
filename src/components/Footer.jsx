@@ -21,15 +21,25 @@ const Footer = () => {
           <div className='flex flex-col xs:flex-row justify-start sm:justify-end mt-4 sm:mt-0 gap-4 xs:gap-10 text-white'>
             <div>
               <h4 className='font-bold text-xs text-gray-400'>Email</h4>
-              <p className='text-sm hover:underline'>
-                <a href='mailto:alanjbacay@gmail.com'>
-                  alanjbacay@gmail.com
-                </a>
-              </p>
+              <a
+                href='mailto:alanjbacay@gmail.com'
+                className='text-sm hover:underline'
+                target='_blank'
+                rel='noreferrer'
+              >
+                alanjbacay@gmail.com
+              </a>
             </div>
             <div>
               <h4 className='font-bold text-xs text-gray-400'>Phone</h4>
-              <p className='text-sm'>(+63)9064812232</p>
+              <a
+                href='tel:+639064811262'
+                target='_blank'
+                rel='noreferrer'
+                className='text-sm hover:underline'
+              >
+                (+63)9064811262
+              </a>
             </div>
           </div>
           {/* Foot Note */}

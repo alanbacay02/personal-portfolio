@@ -15,7 +15,7 @@ const Contacts = () => {
               <h4 className='text-base sm:text-lg font-bold mb-2 text-gray-400'>Socials</h4>
               <div className='flex flex-row items-center text-2xl md:text-3xl gap-1 text-primary'>
                 <a
-                  href='https://www.linkedin.com/in/alan-neale-bacay-ii-60aa48258/'
+                  href='https://www.linkedin.com/in/alanbacay/'
                   target='_blank'
                   rel='noreferrer'
                   className='hover:text-blue-600 transition-colors duration-300'>
@@ -30,7 +30,7 @@ const Contacts = () => {
                 </a>
               </div>
             </div>
-            <div>
+            <div className='mb-4'>
               <h4 className='text-base sm:text-lg font-bold mb-1 text-gray-400'>Email</h4>
               <div className='flex flex-row items-center text-sm sm:text-base gap-2 font-medium text-blue-500'>
                 <a
@@ -40,6 +40,19 @@ const Contacts = () => {
                   className='hover:text-blue-600 transition-colors duration-300'
                 >
                   alanjbacay@gmail.com
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 className='text-base sm:text-lg font-bold mb-1 text-gray-400'>Phone</h4>
+              <div className='flex flex-row items-center text-sm sm:text-base gap-2 font-medium text-blue-500'>
+                <a
+                  href='tel:+639064811262'
+                  target='_blank'
+                  rel='noreferrer'
+                  className='hover:text-blue-600 transition-colors duration-300'
+                >
+                  (+63)9064811262
                 </a>
               </div>
             </div>

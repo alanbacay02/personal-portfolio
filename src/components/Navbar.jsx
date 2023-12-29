@@ -28,7 +28,7 @@ const NAVBAR_ITEMS = [
 const NAVBAR_ICONS = [
   {
     anchorIcon: <FaLinkedinIn />,
-    anchorLink : 'https://www.linkedin.com/in/alan-neale-bacay-ii-60aa48258/'
+    anchorLink : 'https://www.linkedin.com/in/alanbacay/'
   },
   {
     anchorIcon: <FaGithubAlt />,

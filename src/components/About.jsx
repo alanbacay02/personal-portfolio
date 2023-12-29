@@ -67,7 +67,7 @@ const About = () => {
             })}
             <div className='flex flex-row gap-3 mt-7 items-end'>
               <div className='flex flex-row gap-1 text-2xl md:text-3xl text-gray-400'>
-                <a href='https://www.linkedin.com/in/alan-neale-bacay-ii-60aa48258/' target='_blank' rel='noreferrer' className='hover:text-primary transition-colors duration-300'><FaLinkedin /></a>
+                <a href='https://www.linkedin.com/in/alanbacay/' target='_blank' rel='noreferrer' className='hover:text-primary transition-colors duration-300'><FaLinkedin /></a>
                 <a href='https://github.com/alanbacay02' target='_blank' rel='noreferrer' className='hover:text-primary transition-colors duration-300'><FaGithubSquare /></a>
               </div>
               <div className='w-fit text-sm md:text-base font-medium text-primary  hover:cursor-pointer hover:underline hover:underline-offset-2 transtion-all duration-300'>
