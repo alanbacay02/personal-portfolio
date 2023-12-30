@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaCheckCircle } from "react-icons/fa";
 import { ImPlus } from "react-icons/im";
 import TempHeroSvg from '../svg-components/TempHeroSvg';
 
@@ -19,6 +20,10 @@ const Hero = () => {
           <div className='flex flex-col h-full w-full justify-center items-start'>
             {/* Start of Hero Content */}
             <div id='hero-content' className='flex flex-col justify-center'>
+              <div className='bg-gray-200 dark:bg-darkSecondary flex flex-row gap-1 items-center rounded-full font-medium text-green-700 dark:text-green-500 w-fit text-xs mb-2 px-2 py-0.5'>
+                <FaCheckCircle />
+                <p>Open to Remote Work</p>
+              </div>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-2'>Hey, I'm Alan.</h1>
               <h4 className='text-base md:text-lg mb-3'> Web-Developer / Computer Engineer</h4>
               <p className='paragraph mb-4'>I design and create websites using React.</p>
