@@ -9,11 +9,11 @@ const INTRO_ITEMS = [
   'Based in the Philippines'
 ]
 
-const introDivLineMargin = 'w-[2px] sm:w-[2.5px] ml-[5px] sm:ml-[6px] bg-secondary'
+const introDivLineMargin = 'w-[2px] sm:w-[2.5px] ml-[5px] sm:ml-[7.5px] bg-secondary dark:bg-gray-700'
 
 const Hero = () => {
   return (
-    <div className='hero-container w-full'>
+    <div className='hero-container w-full text-text dark:text-darkText'>
       <div className='w-full h-full max-w-[1200px] mx-auto px-4'>
         <div className='grid sm:grid-cols-2 h-full items-center gap-14 sm:gap-0'>
           <div className='flex flex-col h-full w-full justify-center items-start'>
@@ -29,7 +29,7 @@ const Hero = () => {
                   return (
                     <>
                       <li className='flex flex-row items-center gap-4 ml-0 mt-1 mb-1'>
-                        <p className='text-sm'><ImPlus /></p>
+                        <p className='text-sm dark:text-darkText'><ImPlus /></p>
                         <p className='font-medium text-sm'>{item}</p>
                       </li>
                       {index !== INTRO_ITEMS.length - 1 ? <div className={`h-4 ${introDivLineMargin}`} /> : ''}
@@ -42,15 +42,15 @@ const Hero = () => {
 
               {/* START OF BUTTON GROUP */}
               <div className='flex flex-row gap-2 md:gap-4 mt-4 font-medium'>
-                <button className='button-style bg-secondary text-text rounded-lg'>View Resume</button>
-                <button className='button-style bg-primary rounded-lg text-white'>Contact Me</button>
+                <button className='button-style bg-secondary dark:bg-darkSecondary text-text dark:text-darkText rounded-lg'>View Resume</button>
+                <button className='button-style bg-primary dark:bg-darkPrimary rounded-lg text-white dark:text-black'>Contact Me</button>
               </div>
               {/* END OF BUTTON GROUP */}
 
             </div>
             {/* End of Hero Content */}
           </div>
-          <div>
+          <div className='fill-secondary dark:fill-darkSecondary'>
             <TempHeroSvg />
           </div>
         </div>
