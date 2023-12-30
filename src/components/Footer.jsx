@@ -1,6 +1,5 @@
 import React from 'react'
 import { CatCodeLogoSvg } from '../svg-components/IconSVG'
-import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa'
 
 const Footer = () => {
   return (

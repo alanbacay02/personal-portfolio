@@ -7,7 +7,7 @@ const headerStyle = 'text-base sm:text-lg font-bold mb-1 text-gray-400 dark:text
 const Contacts = () => {
 
   return (
-    <div className='w-full py-11 sm:py-14 text-text dark:text-darkText'>
+    <div id='contact' className='w-full py-11 sm:py-14 text-text dark:text-darkText'>
       <div className='w-full max-w-[1200px] mx-auto px-4'>
         <div className='relative grid sm:grid-cols-2 gap-4 md:gap-16'>
           <div className='flex flex-col my-3'>

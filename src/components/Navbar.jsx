@@ -10,19 +10,19 @@ import { CatCodeLogoSvg } from '../svg-components/IconSVG';
 const NAVBAR_ITEMS = [
   {
     title: 'About',
-    href: ''
+    href: '#about'
   },
   {
     title: 'Skills',
-    href: ''
+    href: '/#'
   },
   {
     title: 'Projects',
-    href: ''
+    href: '#projects'
   },
   {
     title: 'Contact',
-    href: ''
+    href: '#contact'
   },
 ]
 
@@ -70,9 +70,11 @@ const Navbar = () => {
         {/* Parent Flex Container */}
         <div className='relative flex flex-row items-center justify-between'>
           {/* Navbar Logo */}
-          <div id='navbar-logo' className='dark:fill-darkText w-6 md:w-7 h-auto hover:cursor-pointer hover:fill-primary dark:hover:fill-darkPrimary transition-colors duration-300 z-50'>
+          <a id='navbar-logo'
+           href='/#'
+           className='dark:fill-darkText w-6 md:w-7 h-auto hover:cursor-pointer hover:fill-primary dark:hover:fill-darkPrimary transition-colors duration-300 z-50'>
             <CatCodeLogoSvg />
-          </div>
+          </a>
 
           {/* Navbar List items on Medium and Larger devices */}
           <div className='hidden md:flex absolute w-full h-full items-center justify-center'>

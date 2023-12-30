@@ -14,7 +14,7 @@ const LEARNED_SKILLS = ['Redux', 'Python', 'Java', 'MATLAB', 'C', 'SASS', 'AWS']
 
 const About = () => {
   return (
-    <div className='w-full py-11 sm:pb-14'>
+    <div id='about' className='w-full py-11 sm:pb-14'>
       <div className='w-full max-w-[1200px] mx-auto px-4 text-text dark:text-darkText'>
         <div className='flex flex-col items-center justify-center w-full mb-10'>
           <h2 className='header'>About Me</h2>
