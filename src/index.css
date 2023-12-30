@@ -2,10 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS */
+/* Color Variables */
+:root {
+  --light-mode-theme: #FFFCFA;
+  --dark-mode-theme: #0C1318;
+  --light-mode-text: #090401;
+  --dark-mode-text: #EBEff3;
+}
 
+/* Custom CSS */
 body {
-  background-color: #FFFCFA;
+  background-color: var(--light-mode-theme);
+  transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+body.dark {
+  background-color: var(--dark-mode-theme);
+  transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1)
 }
 
 .no-scroll {
