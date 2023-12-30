@@ -10,7 +10,7 @@ const INTRO_ITEMS = [
   'Based in the Philippines'
 ]
 
-const introDivLineMargin = 'w-[2px] sm:w-[2.5px] ml-[5px] sm:ml-[7.5px] bg-secondary dark:bg-gray-700'
+const introDivLineMargin = 'w-[2px] sm:w-[2.5px] ml-[7.5px] bg-secondary dark:bg-gray-700'
 
 const Hero = () => {
   return (
