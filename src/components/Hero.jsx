@@ -4,9 +4,9 @@ import { ImPlus } from "react-icons/im";
 import TempHeroSvg from '../svg-components/TempHeroSvg';
 
 const INTRO_ITEMS = [
-  'Addicted to Coffee',
-  'Loves Playing Videogames',
-  'Loves to Listen to Music',
+  'Turns Coffee into Code',
+  'Enjoys Playing Videogames',
+  'Focuses with Music',
   'Based in the Philippines'
 ]
 
@@ -26,7 +26,7 @@ const Hero = () => {
               </div>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-2'>Hey, I'm Alan.</h1>
               <h4 className='text-base md:text-lg mb-3'> Web-Developer / Computer Engineer</h4>
-              <p className='paragraph mb-4'>I design and create websites using React.</p>
+              <p className='paragraph mb-4'>I enjoy designing and creating impactful websites using React.</p>
               {/* START OF SHORT INTRO */}
               <div className={`h-5 sm:h-8 ${introDivLineMargin}`} />
               <ul className='flex flex-col'>
