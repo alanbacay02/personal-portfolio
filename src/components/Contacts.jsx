@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
+import { FaGithubSquare, FaLinkedin, FaViber, FaWhatsapp } from 'react-icons/fa'
 import EmailForm from './EmailForm'
 
 const headerStyle = 'text-base sm:text-lg font-bold mb-1 text-gray-400 dark:text-gray-400'
@@ -47,15 +47,21 @@ const Contacts = () => {
             </div>
             <div>
               <h4 className={headerStyle}>Phone</h4>
-              <div className='flex flex-row items-center text-sm sm:text-base gap-2 font-medium text-blue-500 dark:text-sky-400'>
+              <div className='flex flex-col text-sm sm:text-base font-medium text-blue-500 dark:text-sky-400'>
                 <a
-                  href='tel:+639064811262'
+                  href='tel:+639491520850'
                   target='_blank'
                   rel='noreferrer'
-                  className='hover:text-blue-600 transition-colors duration-300'
+                  className='w-fit hover:text-blue-600 transition-colors duration-300'
                 >
-                  (+63)9064811262
+                  (+63) 949 152 0850
                 </a>
+                <p className='flex flex-row items-center text-[0.700rem] leading-normal text-zinc-500/80 dark:text-gray-200'>
+                  Available on Whatsapp
+                  <span className='pl-0.5 mr-1'><FaWhatsapp /></span>
+                  and Viber
+                  <span className='px-0.5'><FaViber /></span>
+                </p>
               </div>
             </div>
           </div>
