@@ -2,6 +2,7 @@ import React from 'react'
 import { FaCheckCircle } from "react-icons/fa";
 import { ImPlus } from "react-icons/im";
 import TempHeroSvg from '../svg-components/TempHeroSvg';
+import pdf from '../pdf-assets/Bacay_II_Alan_Neale_Resume.pdf'
 
 const INTRO_ITEMS = [
   'Turns Coffee into Code',
@@ -47,7 +48,12 @@ const Hero = () => {
 
               {/* START OF BUTTON GROUP */}
               <div className='flex flex-row gap-2 md:gap-4 mt-4 font-medium'>
-                <button className='button-style bg-secondary dark:bg-darkSecondary text-text dark:text-darkText rounded-lg'>View Resume</button>
+                <a
+                  className='button-style bg-secondary dark:bg-darkSecondary text-text dark:text-darkText rounded-lg'
+                  href={pdf}
+                  target='_blank'
+                  rel='noreferrer'
+                >View Resume</a>
                 <button className='button-style bg-primary dark:bg-darkPrimary rounded-lg text-white dark:text-black'>Contact Me</button>
               </div>
               {/* END OF BUTTON GROUP */}
