@@ -20,8 +20,8 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
 
   return (
     <div className={showPrivacyModal ? 'block' : 'hidden'}>
-      <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center z-30'>
-        <div className='flex flex-col px-8 pb-8 min-w-[60%] max-w-[1200px] max-h-[600px] rounded-lg  bg-background'>
+      <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center z-30 text-text dark:text-darkText'>
+        <div className='flex flex-col px-8 pb-8 h-full w-full sm:min-w-[60%] max-w-[1200px] max-h-[600px] rounded-lg  bg-background dark:bg-zinc-800'>
           <h1 className='text-lg sm:text-xl font-medium py-5'>Privacy Policy</h1>
           <div id='privacy-section-container' className='flex flex-col overflow-y-scroll p-2 border-t border-gray-300'>
             <section className={privacySectionStyle}>
@@ -51,7 +51,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
             </section>
             <section className={privacySectionStyle}>
               <h3 className={privacyHeaderStyle}>Accessing or Updating Your Information</h3>
-              <p className={privacyParagraphStyle}>You have the right to access or update your personal information provided through the contact form. If you wish to access or modify this information, please contact us at <a href='mailto:alanjbacay@gmail.com' className='text-accent hover:underline'>alanjbacay@gmail.com</a>.</p>
+              <p className={privacyParagraphStyle}>You have the right to access or update your personal information provided through the contact form. If you wish to access or modify this information, please contact us at <a href='mailto:alanjbacay@gmail.com' className='text-accent dark:text-primary hover:underline'>alanjbacay@gmail.com</a>.</p>
             </section>
             <section className={privacySectionStyle}>
               <h3 className={privacyHeaderStyle}>Updates to This Privacy Policy</h3>
@@ -59,12 +59,12 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
             </section>
             <section className={privacySectionStyle}>
               <h3 className={privacyHeaderStyle}>Contact Information</h3>
-              <p className={privacyParagraphStyle}>If you have any questions or concerns regarding this Privacy Policy, please contact us at <a href='mailto:alanjbacay@gmail.com' className='text-accent hover:underline'>alanjbacay@gmail.com</a>.</p>
+              <p className={privacyParagraphStyle}>If you have any questions or concerns regarding this Privacy Policy, please contact us at <a href='mailto:alanjbacay@gmail.com' className='text-accent dark:text-primary hover:underline'>alanjbacay@gmail.com</a>.</p>
             </section>
           </div>
           <div id='privacy-buttons-container' className='flex flex-row justify-end pt-5 pr-5 border-t border-gray-300'>
             <button
-              className='py-2 px-5 bg-primary text-white text-sm sm:text-base font-medium rounded-lg hover:bg-blue-600'
+              className='py-2 px-5 bg-primary dark:bg-blue-600 text-white text-sm sm:text-base font-medium rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700'
               onClick={() => {setShowPrivacyModal(!showPrivacyModal)}}
             >Close</button>
           </div>
