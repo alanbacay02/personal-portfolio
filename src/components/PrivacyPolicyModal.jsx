@@ -19,7 +19,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
   }, [showPrivacyModal])
 
   return (
-    <div className={showPrivacyModal ? 'block' : 'hidden'}>
+    <div>
       <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center z-30 text-text dark:text-darkText'>
         <div className='flex flex-col px-8 pb-8 h-full w-full sm:min-w-[60%] max-w-[1200px] max-h-[600px] rounded-lg  bg-background dark:bg-zinc-800'>
           <h1 className='text-lg sm:text-xl font-medium py-5'>Privacy Policy</h1>

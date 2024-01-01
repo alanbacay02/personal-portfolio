@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CatCodeLogoSvg } from '../svg-components/IconSVG'
+import PrivacyPolicyModal from './PrivacyPolicyModal'
 
 const Footer = () => {
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false)
+
   return (
     <div className='w-full bg-black dark:bg-gray-900 text-darkText'>
       <div className='w-full max-w-[1200px] h-fit mx-auto px-4'>
@@ -47,8 +50,13 @@ const Footer = () => {
             <div className='w-fit flex flex-row gap-2 text-xs mt-1 text-gray-400'>
               <p>©alanbacay</p>
               <p>•</p>
-              <a href='/#' className='underline hover:text-darkText'>Privacy Policy</a>
+              <button
+                onClick={() => {setShowPrivacyModal(!showPrivacyModal)}} className='underline hover:text-darkText'
+              >
+                Privacy Policy
+              </button>
             </div>
+            { showPrivacyModal && <PrivacyPolicyModal showPrivacyModal={showPrivacyModal} setShowPrivacyModal={setShowPrivacyModal} />}
           </div>
         </div>
       </div>

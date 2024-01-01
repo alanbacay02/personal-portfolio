@@ -74,7 +74,7 @@ const EmailForm = () => {
           />
         </div>
       </form>
-      <PrivacyPolicyModal showPrivacyModal={showPrivacyModal} setShowPrivacyModal={setShowPrivacyModal} />
+      { showPrivacyModal && <PrivacyPolicyModal showPrivacyModal={showPrivacyModal} setShowPrivacyModal={setShowPrivacyModal} />}
     </div>
   )
 }
