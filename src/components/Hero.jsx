@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaCheckCircle } from "react-icons/fa";
 import { ImPlus } from "react-icons/im";
-import TempHeroSvg from '../svg-components/TempHeroSvg';
+import Img from '../assets/hero_test_blue.png'
 import pdf from '../pdf-assets/Bacay_II_Alan_Neale_Resume.pdf'
+import ContactModal from './ContactModal';
 
 const INTRO_ITEMS = [
   'Turns Coffee into Code',
@@ -14,6 +15,8 @@ const INTRO_ITEMS = [
 const introDivLineMargin = 'w-[2px] sm:w-[2.5px] ml-[7.5px] bg-secondary dark:bg-gray-700'
 
 const Hero = () => {
+  const [showContactModal, setShowContactModal] = useState(false)
+
   return (
     <div className='hero-container w-full text-text dark:text-darkText'>
       <div className='w-full h-full max-w-[1200px] mx-auto px-4'>
@@ -54,18 +57,25 @@ const Hero = () => {
                   target='_blank'
                   rel='noreferrer'
                 >View Resume</a>
-                <button className='button-style bg-primary dark:bg-darkPrimary rounded-lg text-white dark:text-black'>Contact Me</button>
+                <button
+                  className='button-style bg-primary dark:bg-darkPrimary rounded-lg text-white dark:text-black'
+                  onClick={() => {setShowContactModal(!showContactModal)}}
+                >
+                  Contact Me
+                </button>
               </div>
               {/* END OF BUTTON GROUP */}
 
             </div>
             {/* End of Hero Content */}
           </div>
-          <div className='fill-secondary dark:fill-darkSecondary'>
-            <TempHeroSvg />
+          <div className='flex items-center justify-center h-full w-full'>
+            <img src={Img} alt='hero_img' className='h-auto w-[90%] max-w-[400px] md:max-w-none object-cover object-center' />
           </div>
         </div>
       </div>
+
+      { showContactModal && <ContactModal showContactModal={showContactModal} setShowContactModal={setShowContactModal} />}
     </div>
   )
 }
