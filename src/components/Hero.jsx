@@ -70,7 +70,7 @@ const Hero = () => {
             {/* End of Hero Content */}
           </div>
           <div className='flex items-center justify-center h-full w-full'>
-            <img src={Img} alt='hero_img' className='h-auto w-[90%] max-w-[400px] md:max-w-none object-cover object-center' />
+            <img src={Img} loading='lazy' alt='hero_img' className='h-auto w-[90%] max-w-[400px] md:max-w-none object-cover object-center' />
           </div>
         </div>
       </div>
