@@ -61,12 +61,12 @@ const PopoutMenu = ({ mobileMenu, setMobileMenu }) => {
         </button>
 
         {/* Menu List Link Items */}
-        <ul className='flex flex-col text-lg p-4 py-5 gap-5'>
+        <ul className='flex flex-col text-lg px-4 pb-5 pt-1 gap-5'>
           {MENU_LIST_ITEMS.map((item, index) => {
             return (
               <li key={index}>
                 <button
-                  className='w-fit'
+                  className='pr-10'
                   onClick={() => { setMobileMenu(false); handleIdLinkClick(item.href) }}
                 >{item.listItem}</button>
               </li>
