@@ -27,7 +27,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
       document.removeEventListener('mousedown', handleMouseDown)
     }
 
-  }, [showPrivacyModal])
+  }, [showPrivacyModal, setShowPrivacyModal])
 
   return (
     <div>
