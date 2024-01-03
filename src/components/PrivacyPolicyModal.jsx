@@ -71,7 +71,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
         </div>
       </div>
       {/* Darkens Screen behind modal to give focus */}
-      <div className='fixed inset-0 bg-black/20 z-20' />
+      <div className='fixed inset-0 bg-black/50 z-20' />
     </div>
   )
 }
