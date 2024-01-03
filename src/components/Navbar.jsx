@@ -90,7 +90,10 @@ const Navbar = () => {
             <ul className='flex flex-row items-center gap-10 z-50'>
               {NAVBAR_ITEMS.map((item, index) => {
                 return (
-                  <li id={index} className='group relative font-semibold text-sm hover:text-base transition-all duration-300'>
+                  <li
+                    key={index}
+                    className='group relative font-semibold text-sm hover:text-base transition-all duration-300'
+                  >
                     <button
                       onClick={() => {handleListLinkClick(item.href)}}
                       className='py-2'

@@ -36,13 +36,13 @@ const Hero = () => {
               <ul className='flex flex-col'>
                 {INTRO_ITEMS.map((item,index) => {
                   return (
-                    <>
+                    <div key={index}>
                       <li className='flex flex-row items-center gap-4 ml-0 mt-1 mb-1'>
                         <p className='text-sm dark:text-darkText'><ImPlus /></p>
                         <p className='font-medium text-sm'>{item}</p>
                       </li>
                       {index !== INTRO_ITEMS.length - 1 ? <div className={`h-4 ${introDivLineMargin}`} /> : ''}
-                    </>
+                    </div>
                   )
                 })}
               </ul>

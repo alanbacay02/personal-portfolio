@@ -38,7 +38,7 @@ const Projects = () => {
           <div className="grid md:grid-cols-2 w-full gap-16">
             {PROJECT_CARDS.map((item, index) => {
               return (
-                <div className='flex flex-col gap-6 w-fit items-center max-w-[550px] mx-auto'>
+                <div key={index} className='flex flex-col gap-6 w-fit items-center max-w-[550px] mx-auto'>
                     {/* Start of Motion Div */}
                     <motion.div className="bg-gray-200 dark:bg-darkSecondary pt-3 px-3 xs:pt-7 xs:px-7 rounded-xl overflow-clip">
                       <a href={item.pageLink} target='_blank' rel='noreferrer' className='hover:cursor-pointer'>
