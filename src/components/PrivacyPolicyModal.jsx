@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const privacySectionStyle = 'mb-7'
 const privacyHeaderStyle = 'text-base sm:text-lg font-medium mb-3'
 const privacyParagraphStyle = 'text-sm sm:text-base ml-1 max-w-[95%]'
 
 const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
+  const policyModalRef = useRef()
+
   useEffect(() => {
     if (showPrivacyModal) {
       document.body.classList.add('no-scroll')
@@ -12,18 +14,27 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
       document.body.classList.remove('no-scroll')
     }
 
+    const handleMouseDown = (e) => {
+      if (!policyModalRef.current.contains(e.target)) {
+        setShowPrivacyModal(!showPrivacyModal)
+      }
+    }
+    
+    document.addEventListener('mousedown', handleMouseDown)
+
     return () => {
       document.body.classList.remove('no-scroll')
+      document.removeEventListener('mousedown', handleMouseDown)
     }
 
   }, [showPrivacyModal])
 
   return (
     <div>
-      <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center z-30 text-text dark:text-darkText'>
-        <div className='flex flex-col px-8 pb-8 h-full w-full sm:min-w-[60%] max-w-[1200px] max-h-[600px] rounded-lg  bg-background dark:bg-zinc-800'>
+      <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center px-4 z-30 text-text dark:text-darkText'>
+        <div ref={policyModalRef} className='flex flex-col px-3 sm:px-4 pb-4 h-full w-full sm:min-w-[60%] max-w-[1200px] max-h-[80%] rounded-lg  bg-background dark:bg-zinc-800'>
           <h1 className='text-lg sm:text-xl font-medium py-5'>Privacy Policy</h1>
-          <div id='privacy-section-container' className='flex flex-col overflow-y-scroll p-2 border-t border-gray-300'>
+          <div id='privacy-section-container' className='flex flex-col overflow-y-scroll border-y py-2 border-gray-300'>
             <section className={privacySectionStyle}>
               <p className={privacyParagraphStyle}>This Privacy Policy outlines how we collect, use, and protect your information when you interact with Alan Bacay's portfolio website. We are committed to safeguarding your privacy and ensuring the security of any personal information you provide while using this website.</p>
             </section>
@@ -62,7 +73,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
               <p className={privacyParagraphStyle}>If you have any questions or concerns regarding this Privacy Policy, please contact us at <a href='mailto:alanjbacay@gmail.com' className='text-accent dark:text-primary hover:underline'>alanjbacay@gmail.com</a>.</p>
             </section>
           </div>
-          <div id='privacy-buttons-container' className='flex flex-row justify-end pt-5 pr-5 border-t border-gray-300'>
+          <div id='privacy-buttons-container' className='flex flex-row justify-end pt-5 pr-5 border-gray-300'>
             <button
               className='py-2 px-5 bg-primary dark:bg-blue-600 text-white text-sm sm:text-base font-medium rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700'
               onClick={() => {setShowPrivacyModal(!showPrivacyModal)}}
