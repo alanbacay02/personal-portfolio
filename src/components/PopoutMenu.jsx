@@ -6,7 +6,7 @@ import pdf from '../pdf-assets/Bacay_II_Alan_Neale_Resume.pdf'
 const MENU_LIST_ITEMS = [
   {
     listItem: 'About',
-    href: '#about'
+    href: 'about'
   },
   {
     listItem: 'Skills',
@@ -14,13 +14,22 @@ const MENU_LIST_ITEMS = [
   },
   {
     listItem: 'Projects',
-    href: '#projects'
+    href: 'projects'
   },
   {
     listItem: 'Contact',
-    href: '#contact'
+    href: 'contact'
   },
 ]
+
+const handleIdLinkClick = (idTarget) => {
+  const contactElement = document.getElementById(idTarget.toString())
+  if (contactElement) {
+    contactElement.scrollIntoView({ behavior: 'smooth'})
+  } else {
+    console.error(`Element with ID '${idTarget}' does not exist!`)
+  }
+}
 
 const PopoutMenu = ({ mobileMenu, setMobileMenu }) => {
 
@@ -56,11 +65,10 @@ const PopoutMenu = ({ mobileMenu, setMobileMenu }) => {
           {MENU_LIST_ITEMS.map((item, index) => {
             return (
               <li key={index}>
-                <a
-                  href={item.href}
+                <button
                   className='w-fit'
-                  onClick={() => { setMobileMenu(false) }}
-                >{item.listItem}</a>
+                  onClick={() => { setMobileMenu(false); handleIdLinkClick(item.href) }}
+                >{item.listItem}</button>
               </li>
             )
           })}
@@ -116,7 +124,15 @@ const PopoutMenu = ({ mobileMenu, setMobileMenu }) => {
           </a>
 
           {/* Contact Button */}
-          <button className='px-3 py-2 w-fit bg-primary dark:bg-darkPrimary rounded-lg text-white dark:text-darkBackground'>Contact Me</button>
+          <button
+            onClick={() => {
+              handleIdLinkClick('contact')
+              setMobileMenu(!mobileMenu)
+            }}
+            className='px-3 py-2 w-fit bg-primary dark:bg-darkPrimary rounded-lg text-white dark:text-darkBackground'
+          >
+            Contact Me
+          </button>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ import { CatCodeLogoSvg } from '../svg-components/IconSVG';
 const NAVBAR_ITEMS = [
   {
     title: 'About',
-    href: '#about'
+    href: 'about'
   },
   {
     title: 'Skills',
@@ -18,11 +18,11 @@ const NAVBAR_ITEMS = [
   },
   {
     title: 'Projects',
-    href: '#projects'
+    href: 'projects'
   },
   {
     title: 'Contact',
-    href: '#contact'
+    href: 'contact'
   },
 ]
 
@@ -64,6 +64,15 @@ const Navbar = () => {
     )
   }
 
+  const handleListLinkClick = (idTarget) => {
+    const contactElement = document.getElementById(idTarget.toString())
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth'})
+    } else {
+      console.error(`Element with ID '${idTarget}' does not exist!`)
+    }
+  }
+
   return (
     <div className={`bg-background dark:bg-darkBackground text-text dark:text-darkText w-full h-fit z-10 ${scrolling ? 'navbar-scroll py-4' : 'navbar-default py-4'}`}>
       <div className='w-full max-w-[1200px] mx-auto px-4'>
@@ -82,7 +91,12 @@ const Navbar = () => {
               {NAVBAR_ITEMS.map((item, index) => {
                 return (
                   <li id={index} className='group relative font-semibold text-sm hover:text-base transition-all duration-300'>
-                    <a href={item.href} className='py-2'>{item.title}</a>
+                    <button
+                      onClick={() => {handleListLinkClick(item.href)}}
+                      className='py-2'
+                    >
+                      {item.title}
+                    </button>
                     <div className='absolute -bottom-1 left-0 h-1 w-0 -z-50 group-hover:w-full bg-primary dark:bg-darkPrimary transition-all duration-300' />
                   </li>
                 )
