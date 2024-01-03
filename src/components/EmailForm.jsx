@@ -56,7 +56,7 @@ const EmailForm = () => {
           <input
             id='form_agreement'
             type='checkbox'
-            className='text-lg w-3 h-3'
+            className='text-lg w-3 h-3 hover:cursor-pointer'
             required
           />
           <p className='text-sm'>I have read and agree to the <span onClick={() => {setShowPrivacyModal(!showPrivacyModal)}} className='hover:cursor-pointer hover:underline text-accent dark:text-darkPrimary'>Privacy Policy</span>.</p>
