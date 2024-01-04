@@ -52,13 +52,13 @@ const Hero = () => {
               {/* START OF BUTTON GROUP */}
               <div className='flex flex-row gap-2 md:gap-4 mt-4 font-medium'>
                 <a
-                  className='button-style bg-secondary dark:bg-darkSecondary text-text dark:text-darkText rounded-lg'
+                  className='button-style bg-secondary dark:bg-darkSecondary text-text dark:text-darkText rounded-lg hover:bg-gray-400 hover:dark:bg-cyan-900 transition-colors duration-300'
                   href={pdf}
                   target='_blank'
                   rel='noreferrer'
                 >View Resume</a>
                 <button
-                  className='button-style bg-primary dark:bg-darkPrimary rounded-lg text-white dark:text-black'
+                  className='button-style bg-primary dark:bg-darkPrimary rounded-lg text-white dark:text-black hover:bg-blue-600 hover:dark:bg-blue-500 transition-colors duration-300'
                   onClick={() => {setShowContactModal(!showContactModal)}}
                 >
                   Contact Me
