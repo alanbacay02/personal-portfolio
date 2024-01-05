@@ -1,6 +1,6 @@
-import { Resend } from 'resend'
-import express from 'express';
-import cors from 'cors'
+const { Resend } = require('resend')
+const express = require('express');
+const cors = require('cors')
 const app = express();
 
 const corsOptions = {
