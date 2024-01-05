@@ -18,7 +18,7 @@ const EmailForm = () => {
     e.preventDefault()
     try {
       // Make a POST request to your Express server endpoint
-      const response = await axios.post('https://personal-portfolio-server-theta.vercel.app/', {
+      const response = await axios.post('https://personal-portfolio-server-theta.vercel.app/submitForm', {
         name: name,
         email: emailAddress,
         message: message,
