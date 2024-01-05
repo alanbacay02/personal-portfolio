@@ -19,8 +19,13 @@ app.use(express.urlencoded({ extended: true }));
 app.post('/submitForm', (req, res) => {
   const { name, email, message } = req.body;
   // Perform actions here to send email or handle the data
-  console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
-  res.status(200).send('Form submitted successfully');
+  const processedData = { name, email, message, serverMessage: 'Data processed on server!' };
+    console.log(processedData);
+
+  res.status(200).json({
+    message: 'Form submitted successfully.',
+    processedData: processedData
+  });
 });
 
 app.use("/", (req, res) => {
