@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express();
 
 const corsOptions = {
-  origin: 'https://www.alanbacay.dev', // Replace with your frontend domain
+  origin: 'https://www.alanbacay.dev/', // Replace with your frontend domain
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // If handling cookies or sessions
   optionsSuccessStatus: 200 // Some legacy browsers choke on 204
@@ -16,10 +16,9 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const auth_token = process.env.RESEND_API_TOKEN
-console.log(auth_token)
+const auth_token = process.env.RESEND_API_TOKEN.toString()
 
-const resend = new Resend(process.env.RESEND_API_TOKEN.toString())
+const resend = new Resend(auth_token)
 
 // POST endpoint to handle form submissions
 app.post('/submitForm', async (req, res) => {
@@ -29,12 +28,14 @@ app.post('/submitForm', async (req, res) => {
   console.log(processedData); // Logs data to console
 
   try {
-
     resend.emails.send({
-      from: email,
-      to: 'alanportfoliowebsite@gmail.com',
-      subject: `Website Email from ${name}`,
-      html: `<p>${message}</p>`
+      from: `${name} <onboarding@resend.dev>`,
+      to: 'alan.social02@gmail.com',
+      subject: `Website Inquiry from ${name}`,
+      html: `
+      <p>${message}</p>
+      <small>Sender Email: <a href='mailto:${email}'>${email}</a></small>
+      `
     })
 
     // Sending response back to the client
