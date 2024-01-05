@@ -5,19 +5,22 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import OtherProjects from "./components/OtherProjects";
 import Projects from "./components/Projects";
+import { ThemeProvider } from "./ThemeContext"
 
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <OtherProjects />
-      <Contacts />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div>
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <OtherProjects />
+        <Contacts />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

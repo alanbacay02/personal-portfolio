@@ -1,34 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import CatCode from '../assets/cat_code_logo.png'
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithubAlt } from "react-icons/fa6";
 import { LuMoon, LuSunMoon } from "react-icons/lu";
 import { RxHamburgerMenu } from "react-icons/rx";
 import PopoutMenu from './PopoutMenu';
+import { useTheme } from '../ThemeContext';
+import { CatCodeLogoSvg } from '../svg-components/IconSVG';
 
 const NAVBAR_ITEMS = [
   {
     title: 'About',
-    href: ''
+    href: 'about'
   },
   {
     title: 'Skills',
-    href: ''
+    href: '/#'
   },
   {
     title: 'Projects',
-    href: ''
+    href: 'projects'
   },
   {
     title: 'Contact',
-    href: ''
+    href: 'contact'
   },
 ]
 
 const NAVBAR_ICONS = [
   {
     anchorIcon: <FaLinkedinIn />,
-    anchorLink : 'https://www.linkedin.com/in/alan-neale-bacay-ii-60aa48258/'
+    anchorLink : 'https://www.linkedin.com/in/alanbacay/'
   },
   {
     anchorIcon: <FaGithubAlt />,
@@ -38,8 +39,8 @@ const NAVBAR_ICONS = [
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(false)
   const [scrolling, setScrolling] = useState(false)
+  const {darkMode, changeDarkMode} = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,24 +64,43 @@ const Navbar = () => {
     )
   }
 
+  const handleListLinkClick = (idTarget) => {
+    const contactElement = document.getElementById(idTarget.toString())
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth'})
+    } else {
+      console.error(`Element with ID '${idTarget}' does not exist!`)
+    }
+  }
+
   return (
-    <div className={`w-full h-fit px-4 text-text z-10 ${scrolling ? 'navbar-scroll bg-background py-4' : 'navbar-default py-4'}`}>
-      <div className='w-full max-w-[1200px] mx-auto'>
+    <div className={`bg-background dark:bg-darkBackground text-text dark:text-darkText w-full h-fit z-10 ${scrolling ? 'navbar-scroll py-4' : 'navbar-default py-4'}`}>
+      <div className='w-full max-w-[1200px] mx-auto px-4'>
         {/* Parent Flex Container */}
         <div className='relative flex flex-row items-center justify-between'>
           {/* Navbar Logo */}
-          <div id='navbar-logo' className=' w-6 md:w-10 h-auto hover:cursor-pointer z-50'>
-            <img src={CatCode} alt='cat_code_logo' />
-          </div>
+          <a id='navbar-logo'
+           href='/#'
+           className='dark:fill-darkText w-6 md:w-7 h-auto hover:cursor-pointer hover:fill-primary dark:hover:fill-darkPrimary transition-colors duration-300 z-50'>
+            <CatCodeLogoSvg />
+          </a>
 
           {/* Navbar List items on Medium and Larger devices */}
           <div className='hidden md:flex absolute w-full h-full items-center justify-center'>
             <ul className='flex flex-row items-center gap-10 z-50'>
               {NAVBAR_ITEMS.map((item, index) => {
                 return (
-                  <li id={index} className='group relative font-semibold text-lg hover:text-xl transition-all duration-300 text-text'>
-                    <a href={item.href} className='py-2'>{item.title}</a>
-                    <div className='absolute -bottom-1 left-0 h-1 w-0 -z-50 group-hover:w-full bg-primary transition-all duration-300' />
+                  <li
+                    key={index}
+                    className='group relative font-semibold text-sm hover:text-base transition-all duration-300'
+                  >
+                    <button
+                      onClick={() => {handleListLinkClick(item.href)}}
+                      className='py-2'
+                    >
+                      {item.title}
+                    </button>
+                    <div className='absolute -bottom-1 left-0 h-1 w-0 -z-50 group-hover:w-full bg-primary dark:bg-darkPrimary transition-all duration-300' />
                   </li>
                 )
               })}
@@ -90,7 +110,7 @@ const Navbar = () => {
           {/* Social Media Icons, Hamburger Menu and Dark Mode Button Container */}
           <div className='flex items-center gap-4 sm:gap-6 md:gap-8'>
             {/* Social Media Icon Links */}
-            <div className='hidden xs:flex flex-row gap-1 text-xl z-50'>
+            <div className='hidden xs:flex flex-row gap-1 text-base z-50'>
               {NAVBAR_ICONS.map((item, index) => {
                 return (
                   <a
@@ -106,10 +126,10 @@ const Navbar = () => {
             </div>
             {/* Dark Mode Button */}
             <button
-              onClick={() => {setIsDarkMode(!isDarkMode)}}
-              className='text-xl md:text-2xl hover:cursor-pointer z-50 hover:text-primary transition-all duration-300'
+              onClick={changeDarkMode}
+              className='text-xl md:text-xl hover:cursor-pointer z-50 hover:text-primary transition-all duration-300'
             >
-              {isDarkMode ? <LuSunMoon /> : <LuMoon />}
+              {darkMode ? <LuSunMoon /> : <LuMoon />}
             </button>
 
             {/* Hamburger Menu */}
