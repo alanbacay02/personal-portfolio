@@ -1,6 +1,6 @@
 import { Resend } from 'resend'
-const express = require('express');
-const cors = require('cors')
+import express from 'express';
+import cors from 'cors'
 const app = express();
 
 const corsOptions = {
@@ -34,7 +34,7 @@ app.post('/submitForm', async (req, res) => {
       from: email,
       to: 'alanportfoliowebsite@gmail.com',
       subject: `Website Email from ${name}`,
-      html: <p>{message}</p>
+      html: `<p>${message}</p>`
     })
 
     // Sending response back to the client
