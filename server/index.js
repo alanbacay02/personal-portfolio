@@ -16,7 +16,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const resend = new Resend(process.env.RESEND_API_TOKEN)
+const auth_token = process.env.RESEND_API_TOKEN
+console.log(auth_token ? 'Password is set' : typeof auth_token)
+
+const resend = new Resend(process.env.RESEND_API_TOKEN.toString())
 
 // POST endpoint to handle form submissions
 app.post('/submitForm', async (req, res) => {
