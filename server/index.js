@@ -3,7 +3,7 @@ const cors = require('cors')
 const app = express();
 
 const corsOptions = {
-  origin: 'https://www.alanbacay.dev', // Replace with your frontend domain
+  origin: '*', // Replace with your frontend domain
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // If handling cookies or sessions
   optionsSuccessStatus: 200 // Some legacy browsers choke on 204
