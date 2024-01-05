@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const auth_token = process.env.RESEND_API_TOKEN
-console.log(auth_token ? 'Password is set' : typeof auth_token)
+console.log(auth_token)
 
 const resend = new Resend(process.env.RESEND_API_TOKEN.toString())
 
@@ -34,7 +34,7 @@ app.post('/submitForm', async (req, res) => {
       from: email,
       to: 'alanportfoliowebsite@gmail.com',
       subject: `Website Email from ${name}`,
-      text: message
+      html: <p>{message}</p>
     })
 
     // Sending response back to the client
