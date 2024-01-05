@@ -15,10 +15,16 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Get Email Address and Password from .env
+const email = process.env.EMAIL_ADDRESS
+const password = process.env.EMAIL_PASSWORD
+
+console.log(password ? 'password is set from env' : 'password not set from env')
+
 // POST endpoint to handle form submissions
 app.post('/submitForm', (req, res) => {
   const { name, email, message } = req.body;
-  // Perform actions here to send email or handle the data
+  // Gets data from client and stores it into processed data
   const processedData = { name, email, message, serverMessage: 'Data processed on server!' };
   console.log(processedData); // Logs data to console
 
