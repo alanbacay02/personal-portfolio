@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express();
 
 const corsOptions = {
-  origin: 'https://www.alanbacay.dev', // Replace with your frontend domain
+  origin: 'https://www.alanbacay.dev',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // If handling cookies or sessions
   optionsSuccessStatus: 200, // Some legacy browsers choke on 204
@@ -50,7 +50,7 @@ app.post('/submitForm', async (req, res) => {
     });
   } catch (error) {
     console.error('Error sending email:', error)
-    res.status(500).json({ message: 'Error submitting form' });
+    res.status(500).json({ message: 'Error submitting form', error: error });
   }
 });
 
