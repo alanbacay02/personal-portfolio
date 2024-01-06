@@ -11,8 +11,8 @@ const corsOptions = {
   allowedHeaders: 'Content-Type, Authorization',
 };
 
-// Handle preflight requests for CORS
-app.options('*', cors(corsOptions));
+// // Handle preflight requests for CORS
+// app.options('*', cors(corsOptions));
 
 // Sets CORS origin and content headers
 app.use(cors(corsOptions));
@@ -26,7 +26,7 @@ const auth_token = process.env.RESEND_API_TOKEN.toString()
 const resend = new Resend(auth_token)
 
 // POST endpoint to handle form submissions
-app.post('/submitForm', async (req, res) => {
+app.post('/submitForm', cors(corsOptions), async (req, res) => {
   const { name, email, message } = req.body;
   // Gets data from client and stores it into processed data
   const processedData = { name, email, message, serverMessage: 'Data processed on server!' };
