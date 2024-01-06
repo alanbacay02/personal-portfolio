@@ -74,20 +74,20 @@ const Navbar = () => {
   }
 
   return (
-    <div className={`bg-background dark:bg-darkBackground text-text dark:text-darkText w-full h-fit z-10 ${scrolling ? 'navbar-scroll py-4' : 'navbar-default py-4'}`}>
+    <div className={`bg-background dark:bg-darkBackground text-text dark:text-darkText w-full h-fit z-40 ${scrolling ? 'navbar-scroll py-4' : 'navbar-default py-4'}`}>
       <div className='w-full max-w-[1200px] mx-auto px-4'>
         {/* Parent Flex Container */}
         <div className='relative flex flex-row items-center justify-between'>
           {/* Navbar Logo */}
           <a id='navbar-logo'
            href='/#'
-           className='dark:fill-darkText w-6 md:w-7 h-auto hover:cursor-pointer hover:fill-primary dark:hover:fill-darkPrimary transition-colors duration-300 z-50'>
+           className='dark:fill-darkText w-6 md:w-7 h-auto hover:cursor-pointer hover:fill-primary dark:hover:fill-darkPrimary transition-colors duration-300'>
             <CatCodeLogoSvg />
           </a>
 
           {/* Navbar List items on Medium and Larger devices */}
           <div className='hidden md:flex absolute w-full h-full items-center justify-center'>
-            <ul className='flex flex-row items-center gap-10 z-50'>
+            <ul className='flex flex-row items-center gap-10'>
               {NAVBAR_ITEMS.map((item, index) => {
                 return (
                   <li
@@ -100,7 +100,7 @@ const Navbar = () => {
                     >
                       {item.title}
                     </button>
-                    <div className='absolute -bottom-1 left-0 h-1 w-0 -z-50 group-hover:w-full bg-primary dark:bg-darkPrimary transition-all duration-300' />
+                    <div className='absolute bottom-0 left-0 h-1 w-0 -z-50 group-hover:w-full bg-primary dark:bg-darkPrimary transition-all duration-300' />
                   </li>
                 )
               })}
