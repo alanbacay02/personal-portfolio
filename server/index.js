@@ -11,8 +11,6 @@ const corsOptions = {
   allowedHeaders: 'Content-Type, Authorization',
 };
 
-app.options('*', cors(corsOptions));
-
 app.use(cors(corsOptions));
 
 // Middleware to parse JSON and URL-encoded data
@@ -32,9 +30,9 @@ app.post('/submitForm', async (req, res) => {
 
   try {
     resend.emails.send({
-      from: `${name} <onboarding@resend.dev>`,
+      from: `${name ? name : 'Portfolio Emailer'} <onboarding@resend.dev>`,
       to: 'alan.social02@gmail.com',
-      subject: `Website Inquiry from ${name}`,
+      subject: `Website Inquiry from ${name ? name : 'Portfolio Emailer'}`,
       html: `
       <p>${message}</p>
       <small>Sender Email: <a href='mailto:${email}'>${email}</a></small>
