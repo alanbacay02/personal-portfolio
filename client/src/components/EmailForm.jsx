@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PrivacyPolicyModal from './PrivacyPolicyModal'
 import axios from 'axios'
+import EmailConfirmationPopout from './EmailConfirmationPopout'
 
 const formLabelStyle = 'text-sm font-medium px-2 mb-2 text-gray-400 dark:text-gray-300'
 const inputFieldStyle = 'text-sm border border-secondary dark:border-none rounded-md bg-background dark:bg-darkSecondary py-1 px-2 text-sm sm:text-base text-text dark:text-darkText focus:outline-none focus:shadow-xl'
@@ -17,7 +18,7 @@ const EmailForm = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault()
     try {
-      // Make a POST request to your Express server endpoint
+      // Make a POST request to Express server endpoint
       const response = await axios.post('https://personal-portfolio-server-theta.vercel.app/submitForm', {
         name: name,
         email: emailAddress,
@@ -104,6 +105,8 @@ const EmailForm = () => {
         </div>
       </form>
       { showPrivacyModal && <PrivacyPolicyModal showPrivacyModal={showPrivacyModal} setShowPrivacyModal={setShowPrivacyModal} />}
+
+      <EmailConfirmationPopout />
     </div>
   )
 }
