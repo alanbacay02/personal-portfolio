@@ -12,7 +12,7 @@ const corsOptions = {
 };
 
 // Handle preflight requests for CORS
-app.options('https://www.alanbacay.dev', cors(corsOptions));
+app.options('/submitForm', cors(corsOptions));
 
 // Sets CORS origin and content headers
 app.use(cors(corsOptions));
