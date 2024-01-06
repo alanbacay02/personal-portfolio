@@ -11,6 +11,10 @@ const corsOptions = {
   allowedHeaders: 'Content-Type, Authorization',
 };
 
+// Handle preflight requests for CORS
+app.options('https://www.alanbacay.dev', cors(corsOptions));
+
+// Sets CORS origin and content headers
 app.use(cors(corsOptions));
 
 // Middleware to parse JSON and URL-encoded data
