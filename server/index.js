@@ -9,7 +9,6 @@ const corsOptions = {
   credentials: true, // If handling cookies or sessions
   optionsSuccessStatus: 200, // Some legacy browsers choke on 204
   allowedHeaders: 'Content-Type, Authorization',
-  exposedHeaders: 'Access-Control-Allow-Origin',
 };
 
 // Handle preflight requests for CORS
