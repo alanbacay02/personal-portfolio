@@ -1,19 +1,26 @@
 import React, { useState } from 'react'
 import PrivacyPolicyModal from './PrivacyPolicyModal'
 import axios from 'axios'
-import EmailConfirmationPopout from './EmailConfirmationPopout'
+import { EmailFailure, EmailSuccess } from './EmailConfirmationPopout'
+import { AnimatePresence } from 'framer-motion'
 
+// Tailwind Styles
 const formLabelStyle = 'text-sm font-medium px-2 mb-2 text-gray-400 dark:text-gray-300'
 const inputFieldStyle = 'text-sm border border-secondary dark:border-none rounded-md bg-background dark:bg-darkSecondary py-1 px-2 text-sm sm:text-base text-text dark:text-darkText focus:outline-none focus:shadow-xl'
 
 const EmailForm = () => {
+  // State use to track `privacyPolicyModal` shown state
   const [showPrivacyModal, setShowPrivacyModal] = useState(false)
   // State used to track changes to name field
   const [name, setName] = useState('')
   // State used to track changes to email address field
   const [emailAddress, setEmailAddress] = useState('')
+  // State used to track changes to policy checkbox
+  const [isChecked, setIsChecked] = useState(false)
   // State used to track changes to message field
   const [message, setMessage] = useState('')
+  // State used to track if Email is sent successfully
+  const [emailSent, setEmailSent] = useState(null)
 
   const handleFormSubmit = async (e) => {
     e.preventDefault()
@@ -25,16 +32,29 @@ const EmailForm = () => {
         message: message,
       });
 
-      // Handle successful response (if needed)
+      // Handle successful response
       console.log('Form submitted successfully!', response.data);
+      setEmailSent('success') // Sets value of `emailSent` state to 'success'
     } catch (error) {
       // Handle error if the request fails
       console.error('Error submitting form:', error);
+      setEmailSent('failure') // Sets value of `emailSent` state to 'fail'
     }
   }
 
+  const handleFormClear = () => { // Function to clear email form when called
+    setName('') // Clears `name` state
+    setEmailAddress('') // Clears `emailAddress` state
+    setIsChecked(false) // Sets `isChecked` state to false
+    setMessage('') // Clears `message` state
+  }
+
+  const removeConfirmationMessage = () => {
+    setEmailSent(null)  // Sets `emailSent` to null when function is called
+  }
+
   return (
-    <div className='w-full max-w-[400px] md:max-w-[550px]'>
+    <div className='relative  w-full max-w-[400px] md:max-w-[550px]'>
       <form onSubmit={handleFormSubmit} className='flex flex-col justify-center'>
         {/* NAME FIELD */}
         <div className='flex flex-col mb-4'>
@@ -89,6 +109,8 @@ const EmailForm = () => {
             id='form_agreement'
             type='checkbox'
             className='text-lg w-3 h-3 hover:cursor-pointer'
+            checked={isChecked}
+            onChange={() => {setIsChecked(!isChecked)}}
             required
           />
           <p className='text-sm'>I have read and agree to the <span onClick={() => {setShowPrivacyModal(!showPrivacyModal)}} className='hover:cursor-pointer hover:underline text-accent dark:text-darkPrimary'>Privacy Policy</span>.</p>
@@ -104,9 +126,30 @@ const EmailForm = () => {
           />
         </div>
       </form>
-      { showPrivacyModal && <PrivacyPolicyModal showPrivacyModal={showPrivacyModal} setShowPrivacyModal={setShowPrivacyModal} />}
+      {/* Mounts `PrivacyPolicyModal` when `showPrivacyModal` is set to true */}
+      { showPrivacyModal &&
+        <PrivacyPolicyModal
+          showPrivacyModal={showPrivacyModal}
+          setShowPrivacyModal={setShowPrivacyModal}
+        />
+      }
 
-      <EmailConfirmationPopout />
+      {/* `AnimatePrescence` animates children Motion components when mounting or unmounting */}
+      <AnimatePresence>
+        {/* Mounts component if `emailSent` is set to success */}
+        {emailSent === 'success' &&
+          <EmailSuccess
+            removeConfirmationMessage={removeConfirmationMessage}
+            handleFormClear={handleFormClear}
+          />
+        }
+        {/* Mounts component if `emailSent` is set to 'failure' */}
+        {emailSent === 'failure' && 
+          <EmailFailure
+            removeConfirmationMessage={removeConfirmationMessage}
+          />
+        }
+      </AnimatePresence>
     </div>
   )
 }
