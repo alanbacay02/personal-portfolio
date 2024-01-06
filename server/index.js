@@ -4,11 +4,14 @@ const cors = require('cors')
 const app = express();
 
 const corsOptions = {
-  origin: '*', // Replace with your frontend domain
+  origin: 'https://www.alanbacay.dev', // Replace with your frontend domain
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // If handling cookies or sessions
-  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+  optionsSuccessStatus: 200, // Some legacy browsers choke on 204
+  allowedHeaders: 'Content-Type, Authorization',
 };
+
+app.options('*', cors(corsOptions));
 
 app.use(cors(corsOptions));
 
