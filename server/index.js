@@ -13,7 +13,7 @@ const corsOptions = {
 };
 
 // Handle preflight requests for CORS
-app.options('/submitForm', cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 // Sets CORS origin and content headers
 app.use(cors(corsOptions));
