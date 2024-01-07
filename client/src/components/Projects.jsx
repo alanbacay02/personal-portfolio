@@ -57,8 +57,8 @@ const Projects = () => {
                     {/* End of Motion Div */}
                   <div className="flex flex-col px-2 w-auto">
                     <div className="flex flex-row items-center mb-3">
-                      <h2 className='w-full xs:min-w-fit text-base sm:text-xl font-medium'>{item.title}</h2>
-                      <div className='h-0.5 w-[30%] xs:w-full bg-secondary mt-1 mx-3' />
+                      <h2 className='text-base sm:text-xl font-medium'>{item.title}</h2>
+                      <div className='flex-grow h-0.5 bg-secondary mt-1 mx-3' />
                       <div className="text-xl sm:text-2xl flex flex-row gap-2 mt-1 text-gray-400 dark:text-gray-300">
                         <a href={item.githubLink} target='_blank' rel='noreferrer' className='hover:cursor-pointer hover:text-primary dark:hover:text-darkPrimary hover:scale-110 transition-all duration-300'><FaGithubSquare /></a>
                         <a href={item.pageLink} target='_blank' rel='noreferrer' className='hover:cursor-pointer hover:text-primary dark:hover:text-darkPrimary hover:scale-110 transition-all duration-300'><IoLinkOutline /></a>
