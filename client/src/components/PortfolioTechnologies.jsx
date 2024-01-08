@@ -79,8 +79,8 @@ const PortfolioTechnologies = () => {
         <div className='grid md:grid-cols-2 items-center'>
           <div className='mb-5 md:m-0 flex flex-col text-center md:text-left'>
             <h1 className='font-bold text-xl sm:text-2xl mb-2'>This website was built with these technologies.</h1>
-            <div className='w-full flex flex-row items-center justify-center md:justify-start text-sm text-gray-500 dark:text-gray-400'>
-              <p>
+            <div className='w-full flex flex-col xs:flex-row items-center justify-center md:justify-start text-sm text-gray-500 dark:text-gray-400'>
+              <p className='mb-1 xs:m-0'>
                 Hosted with{' '}
                 <a
                   href='https://vercel.com/home'
@@ -107,12 +107,12 @@ const PortfolioTechnologies = () => {
             </div>
           </div>
           <div className='relative'>
-            <div id='svg-icons-container' className='flex flex-row items-center justify-evenly gap-4'>
+            <div id='svg-icons-container' className='flex flex-row items-center justify-evenly gap-2  '>
               {TECH_STACK_SVG.map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className={`group hover:cursor-pointer relative overflow-clip pb-5 w-auto h-20 ${item.tailwindStyle}`}
+                    className={`group hover:cursor-pointer relative overflow-y-clip pb-5 w-auto h-20 ${item.tailwindStyle}`}
                     // Calls this functon when mouse hovers over element
                     onMouseOver={hideElement}
                     // Calls this function when mouse/tap selects element
