@@ -36,9 +36,9 @@ app.post('/submitForm', cors(corsOptions), async (req, res) => {
   // Gets data from client and stores it into processed data
   const processedData = { name, email, message, serverMessage: 'Data processed on server!' };
   console.log(processedData); // Logs data to console
-
+  
   try {
-    resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: `${name ? name : 'Portfolio Emailer'} <outbound@alanbacay.dev>`,
       to: 'alan.social02@gmail.com',
       subject: `Website Inquiry from ${name ? name : 'Portfolio Emailer'}`,
@@ -46,16 +46,16 @@ app.post('/submitForm', cors(corsOptions), async (req, res) => {
       <p>${message}</p>
       <small>Sender Email: <a href='mailto:${email}'>${email}</a></small>
       `
-    })
-
-    // Sending response back to the client
-    res.status(200).json({
-      message: 'Form submitted successfully.',
-      processedData: processedData,
     });
-  } catch (error) {
-    console.error('Error sending email:', error)
-    res.status(500).json({ message: 'Error submitting form', error: error });
+
+    if (error) {
+      return res.status(400).json({ error });
+    }
+
+    res.status(200).json({ data });
+  } catch (err) {
+    console.error("Error sending email:", err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
