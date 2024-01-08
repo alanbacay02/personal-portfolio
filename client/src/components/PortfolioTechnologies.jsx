@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ExpressSvg, NodeSVG, ReactSvgIcon, TailwindSvgIcon } from '../svg-components/IconSVG'
 import {motion} from 'framer-motion'
 
@@ -42,6 +42,33 @@ const bounceVariants = {
 const PortfolioTechnologies = () => {
   const [svgIconIsHovered, setSvgIconIsHovered] = useState(false)
 
+  useEffect(() => {
+    // Set up an Intersection Observer to track changes in visibility
+    const observer = new IntersectionObserver( entries => {
+      // Iterate through each entry observer by the Intersection Observer
+      entries.forEach(entry => {
+        // Check if the observer element is intersecting the observer
+        if (entry.isIntersecting) {
+          // Add 'in-view' class to the card container when it's in view
+          setSvgIconIsHovered(false)
+        }
+      })
+    }, {
+      // Set the threshold for intersection to trigger at 50% visibility
+      threshold: 0.5
+    })
+
+    // Selects element with `svg-icons-container` id
+    const svgContainer = document.querySelector('#svg-icons-container')
+
+    // Start observing the svg icons container
+    observer.observe(svgContainer)
+
+    return () => {
+      observer.disconnect() // Cleans up observer on component unmounting
+    }
+  }, [])
+
   const hideElement = () => {
     setSvgIconIsHovered(true)
   }
@@ -80,7 +107,7 @@ const PortfolioTechnologies = () => {
             </div>
           </div>
           <div className='relative'>
-            <div className='flex flex-row items-center justify-evenly gap-4'>
+            <div id='svg-icons-container' className='flex flex-row items-center justify-evenly gap-4'>
               {TECH_STACK_SVG.map((item, index) => {
                 return (
                   <div
@@ -103,7 +130,7 @@ const PortfolioTechnologies = () => {
               variants={bounceVariants}
               initial='start'
               animate={svgIconIsHovered ? {opacity: 0} : 'bounce'}
-              className='absolute -bottom-6 left-0 right-0 w-fit mx-auto text-xs'
+              className='absolute -bottom-6 left-0 right-0 w-fit mx-auto font-medium text-xs'
             >
               <p className='hidden md:block'>Hover to View Names</p>
               <p className='md:hidden'>Tap to View Names</p>
