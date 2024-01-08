@@ -74,7 +74,7 @@ const PortfolioTechnologies = () => {
   }
 
   return (
-    <div className='w-full py-12 bg-gray-200 dark:bg-slate-900 text-text dark:text-darkText'>
+    <div className='w-full py-12 bg-gray-200 dark:bg-slate-900 text-text dark:text-darkText my-6'>
       <div className='w-full max-w-[1200px] mx-auto px-4'>
         <div className='grid md:grid-cols-2 items-center'>
           <div className='mb-5 md:m-0 flex flex-col text-center md:text-left'>
