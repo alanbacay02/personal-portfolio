@@ -62,7 +62,7 @@ app.post('/submitForm', cors(corsOptions), async (req, res) => {
 // webhooks endpoint to handle webhook submissions
 app.post('/webhooks', cors(webhookOptions), async (req, res) => {
   const payload = req.body
-  console.log(payload)
+  console.log(payload['type'])
   res.status(200)
 })
 
