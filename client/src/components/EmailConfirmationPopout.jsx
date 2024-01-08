@@ -23,7 +23,7 @@ export const EmailSuccess = ({ removeConfirmationMessage, handleFormClear }) => 
     // Cleanup function for timer and event listener on component umount
     return () => {
       clearTimeout(timer)
-      handleFormClear() // Calls the `handleFormClear` function on component unmount
+      // handleFormClear() // Calls the `handleFormClear` function on component unmount
       document.removeEventListener('mousedown', handleMouseDown)
     }
   }, [removeConfirmationMessage, handleFormClear])
