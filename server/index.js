@@ -11,9 +11,6 @@ const corsOptions = {
   allowedHeaders: 'Content-Type, Authorization',
 };
 
-// // Handle preflight requests for CORS
-// app.options('*', cors(corsOptions));
-
 // Sets CORS origin and content headers
 app.use(cors(corsOptions));
 
@@ -21,7 +18,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const auth_token = process.env.RESEND_API_TOKEN.toString()
+const auth_token = process.env.RESEND_API_TOKEN
 
 const resend = new Resend(auth_token)
 
@@ -34,7 +31,7 @@ app.post('/submitForm', cors(corsOptions), async (req, res) => {
 
   try {
     resend.emails.send({
-      from: `${name ? name : 'Portfolio Emailer'} <onboarding@resend.dev>`,
+      from: `${name ? name : 'Portfolio Emailer'} <outbound@alanbacay.dev>`,
       to: 'alan.social02@gmail.com',
       subject: `Website Inquiry from ${name ? name : 'Portfolio Emailer'}`,
       html: `
