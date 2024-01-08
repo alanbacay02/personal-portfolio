@@ -34,7 +34,7 @@ const bounceVariants = {
     y: [0, -6, 2, 0],
     transition: {
       repeat: Infinity,
-      repeatDelay: 5
+      repeatDelay: 4
     }
   }
 }
@@ -113,7 +113,9 @@ const PortfolioTechnologies = () => {
                   <div
                     key={index}
                     className={`group hover:cursor-pointer relative overflow-clip pb-5 w-auto h-20 ${item.tailwindStyle}`}
+                    // Calls this functon when mouse hovers over element
                     onMouseOver={hideElement}
+                    // Calls this function when mouse/tap selects element
                     onMouseDown={hideElement}
                   >
                     {item.svgComponent}
