@@ -13,7 +13,7 @@ export const EmailSuccess = ({ removeConfirmationMessage, handleFormClear }) => 
     const handleMouseDown = (e) => {
       if(!messageSuccessRef.current.contains(e.target)) {
         clearTimeout(timer) // Remove timer if user clicks outside ref
-        removeConfirmationMessage() // Callback if user clicks outside ref
+        // removeConfirmationMessage() // Callback if user clicks outside ref
       }
     }
 
