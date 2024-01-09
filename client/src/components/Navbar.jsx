@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithubAlt } from "react-icons/fa6";
 import { LuMoon, LuSunMoon } from "react-icons/lu";
@@ -36,6 +37,21 @@ const NAVBAR_ICONS = [
     anchorLink : 'https://github.com/alanbacay02'
   }
 ]
+
+const parentVariants = {
+  visible: {
+    delay: 0.5, // Add a short delay before triggering this transition
+    transition: { 
+      when: "beforeChildren", // Trigger children animations after transition
+      staggerChildren: 0.1, // Step interval for staggering
+    }
+  }
+}
+
+const childVariants = {
+  hidden: { opacity: 0, y: 75 },
+  visible: { opacity: 1, y: 0 }
+}
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
@@ -77,7 +93,12 @@ const Navbar = () => {
     <div className={`bg-background dark:bg-darkBackground text-text dark:text-darkText w-full h-fit z-40 ${scrolling ? 'navbar-scroll py-4' : 'navbar-default py-4'}`}>
       <div className='w-full max-w-[1200px] mx-auto px-4'>
         {/* Parent Flex Container */}
-        <div className='relative flex flex-row items-center justify-between'>
+        <motion.div
+          variants={parentVariants}
+          initial='hidden'
+          animate='visible'
+          className='relative flex flex-row items-center justify-between overflow-hidden'
+        >
           {/* Navbar Logo */}
           <a id='navbar-logo'
            href='/#'
@@ -90,8 +111,9 @@ const Navbar = () => {
             <ul className='flex flex-row items-center gap-10'>
               {NAVBAR_ITEMS.map((item, index) => {
                 return (
-                  <li
+                  <motion.li
                     key={index}
+                    variants={childVariants}
                     className='group relative font-semibold text-sm hover:text-base transition-all duration-300'
                   >
                     <button
@@ -101,7 +123,7 @@ const Navbar = () => {
                       {item.title}
                     </button>
                     <div className='absolute bottom-0 left-0 h-1 w-0 -z-50 group-hover:w-full bg-primary dark:bg-darkPrimary transition-all duration-300' />
-                  </li>
+                  </motion.li>
                 )
               })}
             </ul>
@@ -113,31 +135,33 @@ const Navbar = () => {
             <div className='hidden xs:flex flex-row gap-1 text-base z-50'>
               {NAVBAR_ICONS.map((item, index) => {
                 return (
-                  <a
+                  <motion.a
                     key={index}
+                    variants={childVariants}
                     href={item.anchorLink}
                     target='_blank'
                     rel='noreferrer'
                     className='hover:scale-125 hover:text-primary transition-all duration-300 p-2'>
                       {item.anchorIcon}
-                  </a>
+                  </motion.a>
                 )
               })}
             </div>
             {/* Dark Mode Button */}
-            <button
+            <motion.button
+              variants={childVariants}
               onClick={changeDarkMode}
               className='text-xl md:text-xl hover:cursor-pointer z-50 hover:text-primary transition-all duration-300'
             >
               {darkMode ? <LuSunMoon /> : <LuMoon />}
-            </button>
+            </motion.button>
 
             {/* Hamburger Menu */}
             <div className='md:hidden text-2xl md:text-3xl' onClick={handleMobileMenuClick}>
               <RxHamburgerMenu />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Popout Menu */}
