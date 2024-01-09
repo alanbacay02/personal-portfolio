@@ -78,7 +78,7 @@ const PortfolioTechnologies = () => {
     <div className='w-full py-12 bg-gray-200 dark:bg-slate-900 text-text dark:text-darkText my-6'>
       <div className='w-full max-w-[1200px] mx-auto px-4'>
         <div className='grid md:grid-cols-2 items-center'>
-          <div className='mb-5 md:m-0 flex flex-col text-center md:text-left'>
+          <div className='mb-5 md:m-0 flex flex-col items-center md:items-start text-center md:text-left'>
             <Reveal>
               <h1 className='font-bold text-xl sm:text-2xl mb-2'>This website was built with these technologies.</h1>
             </Reveal>

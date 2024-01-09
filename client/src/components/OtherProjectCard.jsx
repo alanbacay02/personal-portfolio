@@ -12,7 +12,9 @@ const OtherProjectCard = ({ title, languages, deployLink, projectImg }) => {
     <div className='flex flex-col w-[90%] max-w-[330px] mx-auto text-text dark:text-darkText'>
       <a href={deployLink} target='_blank' rel='noreferrer' className='group hover:cursor-pointer'>
         <div className='h-full max-h-[215px] w-full overflow-clip shadow-md'>
-          <img src={projectImg} alt={title} className='object-cover object-center group-hover:scale-105 transition-all duration-300' />
+          <Reveal>
+            <img src={projectImg} alt={title} className='object-cover object-center group-hover:scale-105 transition-all duration-300' />
+          </Reveal>
         </div>
       </a>
       <div className='flex flex-col w-full px-1 pt-2'>

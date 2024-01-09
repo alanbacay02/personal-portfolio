@@ -11,7 +11,7 @@ const OtherProjects = () => {
             <h2 className='header'>Other Projects</h2>
           </Reveal>
           <Reveal>
-            <p className='sub-header max-w-[85%]'>Pure HTML/CSS Pages, Small React Apps, & More</p>
+            <p className='sub-header max-w-[85%] mx-auto'>Pure HTML/CSS Pages, Small React Apps, & More</p>
           </Reveal>
         </div>
 
