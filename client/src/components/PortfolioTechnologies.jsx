@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ExpressSvg, NodeSVG, ReactSvgIcon, TailwindSvgIcon } from '../svg-components/IconSVG'
-import {motion} from 'framer-motion'
+import {motion, useAnimation, useInView} from 'framer-motion'
 import { Reveal } from './Reveal'
 
 const TECH_STACK_SVG = [
@@ -26,6 +26,22 @@ const TECH_STACK_SVG = [
   }
 ]
 
+const parentVariants = {
+  visible: {
+    delay: 0.5, // Add a short delay before triggering this transition
+    transition: { 
+      when: "beforeChildren", // Trigger children animations after transition
+      staggerChildren: 0.1, // Step interval for staggering
+    }
+  }
+}
+
+const childVariants = {
+  hidden: { opacity: 0, y: 75 },
+  visible: { opacity: 1, y: 0 }
+}
+
+
 // Creates framer motion variant `bounceVariant` for bounce animations
 const bounceVariants = {
   start: {
@@ -42,33 +58,25 @@ const bounceVariants = {
 
 const PortfolioTechnologies = () => {
   const [svgIconIsHovered, setSvgIconIsHovered] = useState(false)
+  const iconParentRef = useRef()
+
+  // Checks if referenced element is in viewport using `useInView()`
+  const isInView = useInView(iconParentRef, { once: true })
+  const repeatedInView = useInView(iconParentRef, { once: false})
+
+  // Initializing controls for main animation using `useAnimation()` hook
+  const mainControls = useAnimation()
 
   useEffect(() => {
-    // Set up an Intersection Observer to track changes in visibility
-    const observer = new IntersectionObserver( entries => {
-      // Iterate through each entry observer by the Intersection Observer
-      entries.forEach(entry => {
-        // Check if the observer element is intersecting the observer
-        if (entry.isIntersecting) {
-          // Add 'in-view' class to the card container when it's in view
-          setSvgIconIsHovered(false)
-        }
-      })
-    }, {
-      // Set the threshold for intersection to trigger at 50% visibility
-      threshold: 0.5
-    })
-
-    // Selects element with `svg-icons-container` id
-    const svgContainer = document.querySelector('#svg-icons-container')
-
-    // Start observing the svg icons container
-    observer.observe(svgContainer)
-
-    return () => {
-      observer.disconnect() // Cleans up observer on component unmounting
+    if (isInView) {
+      mainControls.start('visible')
     }
-  }, [])
+
+    if (repeatedInView) {
+      setSvgIconIsHovered(false)
+    }
+
+  }, [isInView, repeatedInView])
 
   const hideElement = () => {
     setSvgIconIsHovered(true)
@@ -112,11 +120,19 @@ const PortfolioTechnologies = () => {
             </Reveal>
           </div>
           <div className='relative'>
-            <div id='svg-icons-container' className='flex flex-row items-center justify-evenly gap-2  '>
+            <motion.div
+              ref={iconParentRef}
+              variants={parentVariants}
+              initial='hidden'
+              animate={mainControls}
+              id='svg-icons-container'
+              className='flex flex-row items-center justify-evenly gap-2'
+            >
               {TECH_STACK_SVG.map((item, index) => {
                 return (
-                  <div
+                  <motion.div
                     key={index}
+                    variants={childVariants}
                     className={`group hover:cursor-pointer relative overflow-y-clip pb-5 w-auto h-20 ${item.tailwindStyle}`}
                     // Calls this functon when mouse hovers over element
                     onMouseOver={hideElement}
@@ -129,10 +145,10 @@ const PortfolioTechnologies = () => {
                     >
                       {item.iconLabel}
                     </p>
-                  </div>
+                  </motion.div>
                 )
               })}
-            </div>
+            </motion.div>
             <motion.div
               variants={bounceVariants}
               initial='start'
