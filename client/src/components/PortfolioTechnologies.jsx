@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ExpressSvg, NodeSVG, ReactSvgIcon, TailwindSvgIcon } from '../svg-components/IconSVG'
 import {motion} from 'framer-motion'
+import { Reveal } from './Reveal'
 
 const TECH_STACK_SVG = [
   {
@@ -78,33 +79,37 @@ const PortfolioTechnologies = () => {
       <div className='w-full max-w-[1200px] mx-auto px-4'>
         <div className='grid md:grid-cols-2 items-center'>
           <div className='mb-5 md:m-0 flex flex-col text-center md:text-left'>
-            <h1 className='font-bold text-xl sm:text-2xl mb-2'>This website was built with these technologies.</h1>
-            <div className='w-full flex flex-col xs:flex-row items-center justify-center md:justify-start text-sm text-gray-500 dark:text-gray-400'>
-              <p className='mb-1 xs:m-0'>
-                Hosted with{' '}
-                <a
-                  href='https://vercel.com/home'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='text-text dark:text-darkText hover:underline'
-                >
-                  Vercel
-                </a>
-                .
-              </p>
-              <p className='pl-1'>
-                View on{' '}
-                <a
-                  href='https://github.com/alanbacay02/personal-portfolio'
-                  target='blank'
-                  rel='noreferrer'
-                  className='text-text dark:text-darkText hover:underline'
-                >
-                  Github
-                </a>
-                .
-              </p>
-            </div>
+            <Reveal>
+              <h1 className='font-bold text-xl sm:text-2xl mb-2'>This website was built with these technologies.</h1>
+            </Reveal>
+            <Reveal>
+              <div className='w-full flex flex-col xs:flex-row items-center justify-center md:justify-start text-sm text-gray-500 dark:text-gray-400'>
+                <p className='mb-1 xs:m-0'>
+                  Hosted with{' '}
+                  <a
+                    href='https://vercel.com/home'
+                    target='_blank'
+                    rel='noreferrer'
+                    className='text-text dark:text-darkText hover:underline'
+                  >
+                    Vercel
+                  </a>
+                  .
+                </p>
+                <p className='pl-1'>
+                  View on{' '}
+                  <a
+                    href='https://github.com/alanbacay02/personal-portfolio'
+                    target='blank'
+                    rel='noreferrer'
+                    className='text-text dark:text-darkText hover:underline'
+                  >
+                    Github
+                  </a>
+                  .
+                </p>
+              </div>
+            </Reveal>
           </div>
           <div className='relative'>
             <div id='svg-icons-container' className='flex flex-row items-center justify-evenly gap-2  '>

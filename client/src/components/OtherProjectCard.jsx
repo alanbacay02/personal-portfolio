@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { HtmlSvgIcon } from '../svg-components/IconSVG';
+import { Reveal } from './Reveal'
 
 // Creates a function component `ProjectCard` to create a card for each project
 const OtherProjectCard = ({ title, languages, deployLink, projectImg }) => {
@@ -16,7 +17,9 @@ const OtherProjectCard = ({ title, languages, deployLink, projectImg }) => {
       </a>
       <div className='flex flex-col w-full px-1 pt-2'>
         <div className='flex flex-row items-center justify-between'>
-          <h3 className='text-sm sm:text-base font-medium'>{title}</h3>
+          <Reveal>
+            <h3 className='text-sm sm:text-base font-medium'>{title}</h3>
+          </Reveal>
           <div className='flex flex-row justify-evenly items-center gap-1'>
               {/* Maps over `LangCompArray` to return Svg Icon Components */}
               {LangCompArray.map((item, index) => {
@@ -26,7 +29,9 @@ const OtherProjectCard = ({ title, languages, deployLink, projectImg }) => {
               })}
           </div>
         </div>
-        <a href={deployLink} target='_blank' rel='noreferrer' className='w-fit text-xs sm:text-sm font-medium text-blue-500 dark:text-sky-500 hover:underline'>View Deployment &gt;</a>
+        <Reveal>
+          <a href={deployLink} target='_blank' rel='noreferrer' className='w-fit text-xs sm:text-sm font-medium text-blue-500 dark:text-sky-500 hover:underline'>View Deployment &gt;</a>
+        </Reveal>
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { motion, useAnimation, useInView } from 'framer-motion'
 
-export const RevealText = ({ children }) => {
+export const Reveal = ({ children }) => {
   const revealRef = useRef()
 
   const isInView = useInView(revealRef, { once: true })
@@ -15,10 +15,10 @@ export const RevealText = ({ children }) => {
       mainControls.start('visible')
       slideControls.start('visible')
     }
-  }, [isInView])
+  }, [isInView, mainControls, slideControls])
 
   return (
-    <div ref={revealRef} className='relative w-fit h-fit box-border overflow-hidden'>
+    <div ref={revealRef} className='relative w-fit h-fit overflow-hidden'>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -44,11 +44,11 @@ export const RevealText = ({ children }) => {
   )
 }
 // Validates propTypes for Reveal component
-RevealText.propTypes = {
+Reveal.propTypes = {
   children: PropTypes.element.isRequired // validates thats children is a jsx element
 }
 
-export const RevealImage = ({ children }) => {
+export const RevealNoSlider = ({ children }) => {
   const revealRef = useRef()
 
   const isInView = useInView(revealRef, { once: true })
@@ -61,13 +61,13 @@ export const RevealImage = ({ children }) => {
       mainControls.start('visible')
       slideControls.start('visible')
     }
-  }, [isInView])
+  }, [isInView, mainControls, slideControls])
 
   return (
-    <div ref={revealRef} className='relative w-fit h-fit box-border overflow-hidden'>
+    <div ref={revealRef} className='relative w-fit h-fit inline-block box-border overflow-hidden'>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 75 },
+          hidden: { opacity: 0, y: 100 },
           visible: { opacity: 1, y: 0 }
         }}
         initial='hidden'
@@ -76,7 +76,7 @@ export const RevealImage = ({ children }) => {
       >
         {children}
       </motion.div>
-      <motion.div
+      {/* <motion.div
         variants={{
           hidden: { left: 0 },
           visible: { left: '100%' }
@@ -85,11 +85,11 @@ export const RevealImage = ({ children }) => {
         animate={slideControls}
         transition={{ duration: 0.5, ease: 'easeIn'}}
         className='absolute top-1 bottom-1 left-0 right-0 bg-primary dark:bg-darkPrimary z-20'
-      />
+      /> */}
     </div>
   )
 }
 // Validates propTypes for Reveal component
-RevealText.propTypes = {
+RevealNoSlider.propTypes = {
   children: PropTypes.element.isRequired // validates thats children is a jsx element
 }
