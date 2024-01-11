@@ -5,8 +5,8 @@ import { EmailFailure, EmailSuccess } from './EmailConfirmationPopout'
 import { AnimatePresence } from 'framer-motion'
 
 // Tailwind Styles
-const formLabelStyle = 'text-sm font-medium px-2 mb-2 text-gray-400 dark:text-gray-300'
-const inputFieldStyle = 'text-sm border border-secondary dark:border-none rounded-md bg-background dark:bg-darkSecondary py-1 px-2 text-sm sm:text-base text-text dark:text-darkText focus:outline-none focus:shadow-xl'
+const formLabelStyle = 'font-medium px-2 mb-2 text-gray-400 dark:text-gray-300'
+const inputFieldStyle = 'border border-secondary dark:border-none rounded-md bg-background dark:bg-darkSecondary py-1 px-2 text-base text-text dark:text-darkText focus:outline-none focus:shadow-xl'
 
 const EmailForm = () => {
   // State use to track `privacyPolicyModal` shown state
@@ -108,7 +108,7 @@ const EmailForm = () => {
           <input
             id='form_agreement'
             type='checkbox'
-            className='text-lg w-3 h-3 hover:cursor-pointer'
+            className='w-4 h-4 hover:cursor-pointer'
             checked={isChecked}
             onChange={() => {setIsChecked(!isChecked)}}
             required
@@ -121,7 +121,7 @@ const EmailForm = () => {
           <input
             id='submit_button'
             type='submit'
-            className='font-medium text-lg text-white rounded-lg py-2 px-5 bg-primary hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300'
+            className='button-style font-medium text-white rounded-lg bg-primary hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300'
             value='Send Email'
           />
         </div>
