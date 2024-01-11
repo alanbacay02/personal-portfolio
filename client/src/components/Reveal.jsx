@@ -29,7 +29,7 @@ export const Reveal = ({ children }) => {
   }, [isInView, mainControls, slideControls])
 
   return (
-    <div ref={revealRef} className='relative w-fit h-fit overflow-hidden'>
+    <div ref={revealRef} className='relative w-fit h-fit overflow-y-clip'>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
