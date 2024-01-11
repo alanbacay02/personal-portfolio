@@ -30,7 +30,7 @@ body.dark {
   text-align: center;
   width: fit-content;
   margin-bottom: 4px;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -109,10 +109,6 @@ body.dark {
 
 /* Media query for sm devices */
 @media screen and (min-width: 640px) {
-  .header {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
   .paragraph {
     font-size: 1rem;
     line-height: 1.5rem;
