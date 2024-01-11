@@ -13,9 +13,9 @@ const Contacts = () => {
         <div className='relative grid sm:grid-cols-2 gap-4 md:gap-16'>
           <div className='flex flex-col my-3'>
             <Reveal>
-              <h2 className='header'>Contact Me</h2>
+              <h2 className='whitespace-nowrap text-xl md:text-2xl font-bold mb-2'>Contact Me</h2>
             </Reveal>
-            <Reveal>
+            <Reveal> 
               <p className='paragraph max-w-[85%] mb-6'>Feel free to reach out to me through my socials, or send an email through the form.</p>
             </Reveal>
             <div className='mb-4'>

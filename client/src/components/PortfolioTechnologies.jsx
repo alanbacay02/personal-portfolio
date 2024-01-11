@@ -141,7 +141,7 @@ const PortfolioTechnologies = () => {
                   >
                     {item.svgComponent}
                     <p
-                      className='absolute -bottom-5 left-0 right-0 w-fit mx-auto font-medium text-xs text-text dark:text-darkText group-hover:bottom-0 group-focus:bottom-0 transition-all duration-300'
+                      className='absolute -bottom-5 left-0 right-0 w-fit mx-auto font-medium text-sm text-text dark:text-darkText group-hover:bottom-0 group-focus:bottom-0 transition-all duration-300'
                     >
                       {item.iconLabel}
                     </p>
@@ -153,7 +153,7 @@ const PortfolioTechnologies = () => {
               variants={bounceVariants}
               initial='start'
               animate={svgIconIsHovered ? {opacity: 0} : 'bounce'}
-              className='absolute -bottom-6 left-0 right-0 w-fit mx-auto font-medium text-xs'
+              className='absolute -bottom-6 left-0 right-0 w-fit mx-auto font-medium text-sm'
             >
               <p className='hidden md:block'>Hover to View Names</p>
               <p className='md:hidden'>Tap to View Names</p>

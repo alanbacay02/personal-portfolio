@@ -36,7 +36,7 @@ const About = () => {
                   </div>
                   <h3 className='font-bold text-sm'>What I Use</h3>
                 </div>
-                <div className='flex flex-wrap text-xs'>
+                <div className='flex flex-wrap text-sm'>
                   {USED_SKILLS.map((item, index) => {
                     return (
                       <p key={index} className='px-3 py-1 my-2 mr-2 font-medium bg-secondary dark:bg-darkSecondary rounded-2xl'>{item}</p>
@@ -53,7 +53,7 @@ const About = () => {
                   </div>
                   <h3 className='font-bold text-sm'>What I Have Learned</h3>
                 </div>
-                <div className='flex flex-wrap text-xs'>
+                <div className='flex flex-wrap text-sm'>
                   {LEARNED_SKILLS.map((item, index) => {
                     return (
                       <p key={index} className='px-3 py-1 my-2 mr-2  font-medium bg-secondary dark:bg-darkSecondary rounded-2xl'>{item}</p>
@@ -70,14 +70,14 @@ const About = () => {
             {PARAGRAPH_CONTENT.map((item, index) => {
               return (
                 <Reveal>
-                  <p key={index} className='mb-5'>
+                  <p key={index} className='paragraph mb-5'>
                     {item}
                   </p>
                 </Reveal>
               )
             })}
             <div className='flex flex-row gap-3 mt-7 items-end'>
-              <div className='flex flex-row gap-1 text-2xl md:text-3xl text-gray-400 dark:text-gray-300'>
+              <div className='flex flex-row gap-1 text-3xl text-gray-400 dark:text-gray-300'>
                 <Reveal>
                   <a href='https://www.linkedin.com/in/alanbacay/' target='_blank' rel='noreferrer' className='hover:text-primary transition-colors duration-300'><FaLinkedin /></a>
                 </Reveal>
@@ -85,7 +85,7 @@ const About = () => {
                   <a href='https://github.com/alanbacay02' target='_blank' rel='noreferrer' className='hover:text-primary transition-colors duration-300'><FaGithubSquare /></a>
                 </Reveal>
               </div>
-              <div className='w-fit text-sm md:text-base font-medium text-primary dark:text-darkPrimary  hover:cursor-pointer hover:underline hover:underline-offset-2 transtion-all duration-300'>
+              <div className='w-fit text-base font-medium text-primary dark:text-darkPrimary  hover:cursor-pointer hover:underline hover:underline-offset-2 transtion-all duration-300'>
                 <Reveal>
                   <a href='mailto:alanjbacay@gmail.com' className='flex flex-row items-center gap-1'>
                     <p>Let's Connect!</p>

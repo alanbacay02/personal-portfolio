@@ -51,7 +51,7 @@ const OtherProjectCard = ({ title, languages, deployLink, projectImg }) => {
       <div className='flex flex-col w-full px-1 pt-2'>
         <div className='flex flex-row items-center justify-between'>
           <Reveal>
-            <h3 className='text-sm sm:text-base font-medium'>{title}</h3>
+            <h3 className='font-medium'>{title}</h3>
           </Reveal>
           <motion.div
             ref={svgParentRef}
@@ -74,7 +74,7 @@ const OtherProjectCard = ({ title, languages, deployLink, projectImg }) => {
           </motion.div>
         </div>
         <Reveal>
-          <a href={deployLink} target='_blank' rel='noreferrer' className='w-fit text-xs sm:text-sm font-medium text-blue-500 dark:text-sky-500 hover:underline'>View Deployment &gt;</a>
+          <a href={deployLink} target='_blank' rel='noreferrer' className='w-fit text-sm font-medium text-blue-500 dark:text-sky-500 hover:underline'>View Deployment &gt;</a>
         </Reveal>
       </div>
     </div>
