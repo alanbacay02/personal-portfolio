@@ -14,10 +14,6 @@ const NAVBAR_ITEMS = [
     href: 'about'
   },
   {
-    title: 'Skills',
-    href: '/#'
-  },
-  {
     title: 'Projects',
     href: 'projects'
   },

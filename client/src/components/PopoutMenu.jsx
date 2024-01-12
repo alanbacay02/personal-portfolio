@@ -9,10 +9,6 @@ const MENU_LIST_ITEMS = [
     href: 'about'
   },
   {
-    listItem: 'Skills',
-    href: ''
-  },
-  {
     listItem: 'Projects',
     href: 'projects'
   },
