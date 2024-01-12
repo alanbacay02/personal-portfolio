@@ -69,8 +69,8 @@ const About = () => {
           <div className='md:col-span-2 paragraph'>
             {PARAGRAPH_CONTENT.map((item, index) => {
               return (
-                <Reveal>
-                  <p key={index} className='paragraph mb-5'>
+                <Reveal key={index}>
+                  <p className='paragraph mb-5'>
                     {item}
                   </p>
                 </Reveal>
