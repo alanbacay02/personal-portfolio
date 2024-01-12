@@ -90,7 +90,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className={`bg-background dark:bg-darkBackground text-text dark:text-darkText w-full h-fit z-40 ${scrolling ? 'navbar-scroll py-4' : 'navbar-default py-4'}`}>
+    <div className={`bg-background dark:bg-darkBackground text-text dark:text-darkText w-full h-fit z-30 ${scrolling ? 'navbar-scroll py-4' : 'navbar-default py-4'}`}>
       <div className='w-full max-w-[1200px] mx-auto px-4'>
         {/* Parent Flex Container */}
         <motion.div

@@ -31,7 +31,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
 
   return (
     <div>
-      <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center px-4 z-30 text-text dark:text-darkText'>
+      <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center px-4 z-50 text-text dark:text-darkText'>
         <div ref={policyModalRef} className='flex flex-col px-3 sm:px-4 pb-4 h-full w-full sm:min-w-[60%] max-w-[1200px] max-h-[80%] rounded-lg  bg-background dark:bg-zinc-800'>
           <h1 className='text-lg sm:text-xl font-medium py-5'>Privacy Policy</h1>
           <div id='privacy-section-container' className='flex flex-col overflow-y-scroll border-y py-2 border-gray-300'>
@@ -82,7 +82,7 @@ const PrivacyPolicyModal = ({ showPrivacyModal, setShowPrivacyModal }) => {
         </div>
       </div>
       {/* Darkens Screen behind modal to give focus */}
-      <div className='fixed inset-0 bg-black/50 z-20' />
+      <div className='fixed inset-0 bg-black/50 z-40' />
     </div>
   )
 }

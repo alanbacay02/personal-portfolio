@@ -39,7 +39,7 @@ const ContactModal = ({ showContactModal, setShowContactModal }) => {
 
   return (
     <div>
-      <div className='fixed top-0 left-0 h-full w-full flex items-center justify-center px-4 z-30'>
+      <div className='fixed top-0 left-0 h-full w-full flex items-center justify-center px-4 z-50'>
         <div ref={modalRef}  className='relative flex flex-col items-center w-full max-w-[230px] md:max-w-[340px] h-fit pb-4 bg-background dark:bg-gray dark:bg-zinc-800 rounded-lg'>
           {/* Close Button at Top of Modal */}
           <div className='absolute top-0 right-0 z-50 text-2xl m-1 text-white dark:text-darkWhite'>
@@ -94,7 +94,7 @@ const ContactModal = ({ showContactModal, setShowContactModal }) => {
       </div>
 
       {/* Darkens Screen behind modal to give focus */}
-      <div className='fixed inset-0 bg-black/50 z-20' />
+      <div className='fixed inset-0 bg-black/50 z-40' />
     </div>
   )
 }
