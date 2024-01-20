@@ -35,7 +35,7 @@ const OtherProjectCard = ({ title, languages, deployLink, projectImg }) => {
     if (isInView) {
       mainControls.start('visible')
     }
-  }, [isInView])
+  }, [isInView, mainControls])
 
 
 

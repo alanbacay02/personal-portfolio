@@ -52,7 +52,7 @@ const PopoutMenu = ({ mobileMenu, setMobileMenu }) => {
       document.removeEventListener('mousedown', handleMouseDown)
 
     }
-  }, [mobileMenu])
+  }, [mobileMenu, setMobileMenu])
 
   return (
     <div>

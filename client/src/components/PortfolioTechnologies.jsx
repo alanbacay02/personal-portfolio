@@ -76,7 +76,7 @@ const PortfolioTechnologies = () => {
       setSvgIconIsHovered(false)
     }
 
-  }, [isInView, repeatedInView])
+  }, [isInView, repeatedInView, mainControls])
 
   const hideElement = () => {
     setSvgIconIsHovered(true)
