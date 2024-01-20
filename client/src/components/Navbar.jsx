@@ -98,7 +98,7 @@ const Navbar = () => {
           {/* Navbar Logo */}
           <a id='navbar-logo'
            href='/#'
-           className='dark:fill-darkText w-6 md:w-7 h-auto hover:cursor-pointer hover:fill-primary dark:hover:fill-darkPrimary transition-colors duration-300'>
+           className='dark:fill-darkText w-6 md:w-7 h-auto hover:cursor-pointer hover:fill-primary dark:hover:fill-darkPrimary transition-colors duration-300 z-40'>
             <CatCodeLogoSvg />
           </a>
 
