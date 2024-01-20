@@ -5,12 +5,13 @@ import { LuLightbulb } from "react-icons/lu";
 import { Reveal } from './Reveal';
 
 const PARAGRAPH_CONTENT = [
-  'I\'m a Computer Engineering graduate from Mariano Marcos State University, passionate about crafting responsive, modular components with React. Proficient in HTML, CSS, and JavaScript, I specialize in creating dynamic, impactful websites using tools like React, TailwindCSS, and Bootstrap 5.',
+  'I\'m a Computer Engineering graduate from Mariano Marcos State University, deeply passionate about crafting responsive, modular components with React. My proficiency extends beyond front-end development, as I have an understanding of back-end technologies, including REST APIs, NodeJS, ExpressJS, and MongoDB.',
+  'Along with my extensive knowledge of HTML, CSS, and JavaScript, I specialize in creating dynamic, impactful websites that seamlessly integrate front-end components with server-side functionalities.',
   'My design journey extends to Figma for UI/UX and crafting assets through Photoshop and Gimp. When not coding, I unwind with video games and a good cup of coffee. I\'m committed to continuous learning and welcome new opportunities that align with my skills and passion.',
   'Open to exciting positions - let\'s connect if you see a potential fit!'
 ]
 
-const USED_SKILLS = ['React', 'Html', 'CSS', 'Javascript', 'Tailwind', 'Figma', 'Photoshop', 'Gimp', 'GitHub']
+const USED_SKILLS = ['React', 'Html', 'CSS', 'Javascript', 'Tailwind', 'NodeJS', 'ExpressJS', 'MongoDB', 'REST APIs', 'Figma', 'Photoshop', 'Gimp', 'GitHub']
 const LEARNED_SKILLS = ['Redux', 'Python', 'Java', 'MATLAB', 'C', 'SASS', 'AWS']
 
 const About = () => {
@@ -27,7 +28,7 @@ const About = () => {
         </div>
         <div className='grid md:grid-cols-3 gap-14 md:gap-7 items-center'>
           {/* Beginning of Skills Container*/} 
-          <div className='sm:min-w-[250px] row-start-2 md:row-start-1 flex flex-col p-3 bg-stone-200/50 dark:bg-gray-900'>
+          <div className='sm:min-w-[250px] h-full row-start-2 md:row-start-1 flex flex-col p-3 bg-stone-200/50 dark:bg-gray-900'>
             <Reveal>
               <div id='skill-container-1' className='mb-7'>
                 <div className='flex flex-row items-center mb-3 gap-2'>
