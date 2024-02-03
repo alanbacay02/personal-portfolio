@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { FaCheckCircle } from "react-icons/fa";
 import { ImPlus } from "react-icons/im";
 import Img from '../assets/hero_test_blue.png'
 import pdf from '../pdf-assets/Bacay_II_Alan_Neale_Resume.pdf'
 import ContactModal from './ContactModal';
 import { RevealNoSlider, Reveal } from './Reveal';
+import WorkStatus from './WorkStatus';
 
 const INTRO_ITEMS = [
   'Turns Coffee into Code',
@@ -26,10 +26,7 @@ const Hero = () => {
             {/* Start of Hero Content */}
             <div id='hero-content' className='flex flex-col justify-center'>
               <Reveal>
-                <div className='bg-gray-200 dark:bg-darkSecondary flex flex-row gap-1 items-center rounded-full font-medium text-green-700 dark:text-green-500 w-fit text-xs mb-2 px-2 py-0.5'>
-                  <FaCheckCircle />
-                  <p>Open to Remote Work</p>
-                </div>
+                <WorkStatus status={'closed'} />
               </Reveal>
               <Reveal>
                 <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-2'>Hey, I'm Alan.</h1>
