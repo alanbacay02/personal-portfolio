@@ -7,13 +7,12 @@ import { RevealNoSlider, Reveal } from './Reveal';
 import WorkStatus from './WorkStatus';
 
 const INTRO_ITEMS = [
-  'Turns Coffee into Code',
+  'Frontend Developer at VirtualAI',
   'Enjoys Playing Videogames',
   'Focuses with Music',
-  'Based in the Philippines'
 ]
 
-const introDivLineMargin = 'w-[2px] sm:w-[2.5px] ml-[7.5px] bg-secondary dark:bg-gray-700'
+const introDivLineMargin = 'w-[2px] sm:w-[2.5px] ml-1.5 bg-secondary dark:bg-gray-700'
 
 const Hero = () => {
   const [showContactModal, setShowContactModal] = useState(false)
