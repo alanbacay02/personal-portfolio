@@ -26,7 +26,7 @@ const Hero = () => {
             {/* Start of Hero Content */}
             <div id='hero-content' className='flex flex-col justify-center'>
               <Reveal>
-                <WorkStatus status={'closed'} />
+                <WorkStatus status={'open'} />
               </Reveal>
               <Reveal>
                 <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-2'>Hey, I'm Alan.</h1>
