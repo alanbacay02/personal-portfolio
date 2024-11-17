@@ -4,6 +4,9 @@ import { FaCode, FaLink } from "react-icons/fa6";
 import { LuLightbulb } from "react-icons/lu";
 import { Reveal } from './Reveal';
 
+/**
+ * TODO: Update paragraph content. Update skills and add new section 'What I Use at Work'
+ */
 const PARAGRAPH_CONTENT = [
   'I\'m a Computer Engineering graduate from Mariano Marcos State University, deeply passionate about crafting responsive, modular components with React. My proficiency extends beyond front-end development, as I have an understanding of back-end technologies, including REST APIs, NodeJS, ExpressJS, and MongoDB.',
   'Along with my extensive knowledge of HTML, CSS, and JavaScript, I specialize in creating dynamic, impactful websites that seamlessly integrate front-end components with server-side functionalities.',
